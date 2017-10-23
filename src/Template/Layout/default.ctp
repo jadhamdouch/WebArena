@@ -34,6 +34,12 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->fetch('script') ?>
 </head>
 <body>
+    <header><?php echo $this->Html->link('Login', array('controller' => 'Arenas', 'action' => 'login')); ?>
+        <?php echo $this->Html->link('Logout', array('controller' => 'Arenas', 'action' => 'logout')); ?>
+        <?php echo $this->Html->link('Index', array('controller' => 'Arenas', 'action' => '/')); ?>
+        <?php echo $this->Html->link('Vision', array('controller' => 'Arenas', 'action' => 'sight')); ?>
+    <?php echo $this->Html->link('Combatant', array('controller' => 'Arenas', 'action' => 'fighter')); ?>
+    <?php echo $this->Html->link('Diary', array('controller' => 'Arenas', 'action' => 'diary')); ?></header>
     <nav class="top-bar expanded" data-topbar role="navigation">
         <ul class="title-area large-3 medium-4 columns">
             <li class="name">
