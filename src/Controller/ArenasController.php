@@ -20,7 +20,7 @@ $this->set("var",$v);
 }
 public function login(){
 $this->loadModel('Players');
-        if ($this->request->is('post') && $this->request->data['email']!=NULL && $this->request->data['password']!=NULL) {
+        if ($this->request->is('post') && $this->request->data['email']!=NULL && $this->request->data['password']!=NULL && $this->request->data['con']=='login' ) {
             if($playerId = $this->Players->checkInfos($this->request->data['email'], $this->request->data['password'])) {
                 $this->request->session()->write('playerId', $playerId);
                 $this->redirect(['action' => 'fighter']);
