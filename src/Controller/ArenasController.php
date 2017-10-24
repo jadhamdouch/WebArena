@@ -70,15 +70,8 @@ public function createFighterForm(){
         $fighterName = $this->request->data['name'];     
         $this->Fighters->createFighter($playerID,$fighterName);
         $this->redirect(['action' => 'fighter']);
-        $this->request->data['submittedfile'] = [
-        'name' => 'C:\Test\test.png',
-            'type' => 'application/pdf',
-    'tmp_name' => 'C:/WINDOWS/TEMP/php1EE.tmp',
-    'error' => 0, // Peut être une chaine sur Windows.
-    'size' => 41737,
-
+        $file = $this->request->data['submittedfile'] ;
         
-];
     }
 }
 
