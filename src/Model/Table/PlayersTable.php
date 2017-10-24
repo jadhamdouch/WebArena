@@ -8,7 +8,7 @@ class PlayersTable extends Table
     public function checkInfos($email, $password){
         $query = $this->find('all', ['conditions' => ['email' => $email]]);
         $selectPlayer = $query->first();
-        if ($password == $selectPlayer['password']) {
+        if (password_verify($password,$selectPlayer['password'])) {
             return $selectPlayer['id'];
         }
         else {
@@ -20,7 +20,7 @@ class PlayersTable extends Table
         $player = $this->newEntity();
         
         $player-> email = $name;
-        $player-> password = $pass;
+        $player-> password = crypt($pass);
         
         if($this->save($player)){
             $id = $player -> id ;
