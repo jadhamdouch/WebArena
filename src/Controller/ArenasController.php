@@ -58,8 +58,17 @@ class ArenasController extends AppController {
 
         $this->set("fighters", $fighters);
 
-        if ($this->request->is('post')) {
+        if ($this->request->is('post') && $this->request->data['create']=='yes' ) {
             $this->redirect(['action' => 'createFighterForm']);
+        }
+        else if ($this->request->is('post')&& $this->request->data['create']=='no'){
+            foreach ( $fighters as $f) {
+                if($f->id ==$this->request->data['fighterId'] ){
+                    $this->request->session()->write('selectedFighterId', $f->id);
+                    $this->redirect(['action' => 'sight']);
+                }
+                
+            }
         }
     }
 
@@ -69,7 +78,7 @@ class ArenasController extends AppController {
         }
         $playerID = $this->request->session()->read('playerId');
         $this->loadModel('Fighters');
-        if ($this->request->is('post') && $this->request->data['name'] != NULL) {
+        if (!empty($this->request->data['name'])) {
             $fighterName = $this->request->data['name'];
             $this->Fighters->createFighter($playerID, $fighterName);
             $this->redirect(['action' => 'fighter']);
@@ -78,6 +87,23 @@ class ArenasController extends AppController {
     }
 
     public function sight() {
+        $this->loadModel('Fighters');
+        $fighterID = $this->request->session()->read('selectedFighterId');
+        $fighter = $this->Fighters->getFighter($fighterID);
+        $this->set("fighter", $fighter);
+        if($this->request->is('post') && $this->request->data['add']=='sight'){
+            $this->Fighters->addSight($fighterID);
+            $this->redirect(['action' => 'sight']);
+        }
+        else if($this->request->is('post') && $this->request->data['add']=='strength'){
+            $this->Fighters->addStrength($fighterID);
+            $this->redirect(['action' => 'sight']);
+        }
+        else if($this->request->is('post') && $this->request->data['add']=='health'){
+            $this->Fighters->addHealth($fighterID);
+            $this->redirect(['action' => 'sight']);
+        }
+        
         
     }
 
