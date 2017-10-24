@@ -27,12 +27,13 @@ $this->loadModel('Players');
                 
             }
             
-        else {$this->Flash->error('Wrong login, please try again !');}
-        }
-        if ($this->request->is('post') && $this->request->data['emailC']!=NULL  && $this->request->data['con']=='register' ) {
+       
+        else if ($this->request->is('post') && $this->request->data['emailC']!=NULL  && $this->request->data['con']=='register' ) {
             if($this->request->data['emailC']!=NULL && $this->request->data['passwordC']!=NULL && $this->request->data['passwordC']==$this->request->data['passwordC2'] ){
                 $this->Players->createPlayer($this->request->data['emailC'],$this->request->data['passwordC']);  
             }
+             else {$this->Flash->error('Wrong login, please try again !');}
+        }
         }
         
     
