@@ -28,5 +28,14 @@ class PlayersTable extends Table
         
     }
     
-   
+    public function checkExistant($email){
+        $query = $this->find('all', ['conditions' => ['email' => $email]]);
+        $selectPlayer = $query->first();
+        if ($selectPlayer == null){
+            return true;
+        }
+        else
+            return false;
+    }
+    
 }
