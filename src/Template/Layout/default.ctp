@@ -34,12 +34,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->fetch('script') ?>
 </head>
 <body>
-    <header><?php echo $this->Html->link('Login', array('controller' => 'Arenas', 'action' => 'login')); ?>
-        <?php echo $this->Html->link('Logout', array('controller' => 'Arenas', 'action' => 'logout')); ?>
-        <?php echo $this->Html->link('Index', array('controller' => 'Arenas', 'action' => '/')); ?>
-        <?php echo $this->Html->link('Vision', array('controller' => 'Arenas', 'action' => 'sight')); ?>
-    <?php echo $this->Html->link('Combatant', array('controller' => 'Arenas', 'action' => 'fighter')); ?>
-    <?php echo $this->Html->link('Diary', array('controller' => 'Arenas', 'action' => 'diary')); ?></header>
+    
     <nav class="top-bar expanded" data-topbar role="navigation">
         <ul class="title-area large-3 medium-4 columns">
             <li class="name">
@@ -48,8 +43,13 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         </ul>
         <div class="top-bar-section">
             <ul class="right">
-                <li><a target="_blank" href="https://book.cakephp.org/3.0/">Documentation</a></li>
-                <li><a target="_blank" href="https://api.cakephp.org/3.0/">API</a></li>
+                
+                <li><?php echo $this->Html->link('Login', array('controller' => 'Arenas', 'action' => 'login')); ?></li>
+                <li><?php echo $this->Html->link('Logout', array('controller' => 'Arenas', 'action' => 'logout')); ?></li>
+                <li><?php echo $this->Html->link('Index', array('controller' => 'Arenas', 'action' => '/')); ?></li>
+                <li><?php echo $this->Html->link('Vision', array('controller' => 'Arenas', 'action' => 'sight')); ?></li>
+                <li><?php echo $this->Html->link('Combattant', array('controller' => 'Arenas', 'action' => 'fighter')); ?></li>
+                <li><?php echo $this->Html->link('Diary', array('controller' => 'Arenas', 'action' => 'diary')); ?></li>
             </ul>
         </div>
     </nav>
