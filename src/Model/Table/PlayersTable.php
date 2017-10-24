@@ -28,12 +28,5 @@ class PlayersTable extends Table
         
     }
     
-    public function createPlayerC($name,$pass){
-        $query = $this->query();
-        $query -> insert(['email','password'])
-                ->values(['email'=>$name,
-                    'password' => $pass])
-                ->execute();
-        $id =$this->id ;
-    }
+   
 }
