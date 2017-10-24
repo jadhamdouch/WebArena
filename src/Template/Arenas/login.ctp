@@ -16,9 +16,9 @@ echo $this->Form->end();
 <legend><?php echo ('Please complete the following form'); ?></legend>
 <?php
 echo $this->Form->hidden('con', ['value' => 'register']);
-echo $this->Form->input('your email', ['type' => 'email']);
-echo $this->Form->input('your new password', ['type' => 'password']);
-echo $this->Form->input('confirm your password', ['type' => 'password']);
+echo $this->Form->input('emailC', ['type' => 'email']);
+echo $this->Form->input('passwordC', ['type' => 'password']);
+echo $this->Form->input('passwordC2', ['type' => 'password']);
 echo $this->Form->submit('Creer');
 echo $this->Form->end();
 ?>
