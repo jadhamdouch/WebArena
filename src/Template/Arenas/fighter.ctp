@@ -3,7 +3,7 @@
 
 
 echo $this->Form->create('Fighter');
-echo $this->Form->button('Creer un nouveau combatant');
+echo $this->Form->button('Creer un nouveau combattant');
 echo $this->Form->end();?>
 <h2>Combatant</h2>
 <table>
