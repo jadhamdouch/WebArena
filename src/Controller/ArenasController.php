@@ -124,7 +124,11 @@ class ArenasController extends AppController {
     }
 
     public function diary() {
+        if ($this->request->session()->check('playerId')==NULL) {$this->redirect(['action' => 'login']);}
         
+        $this->loadModel('Events');
+        
+        $this->set('events', $this->Events->getEvents());
     }
 
 }

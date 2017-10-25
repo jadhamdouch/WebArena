@@ -67,7 +67,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <div class="container clearfix">
         <?= $this->fetch('content') ?>
     </div>
-<footer class="container-fluid text-center">
+<footer class="container-fluid text-center navbar-default navbar-fixed-bottom">
   <p>Membre de la team : </p>
 </footer>
 </body>
