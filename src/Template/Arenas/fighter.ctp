@@ -1,5 +1,10 @@
 
- 
+<div class="container-fluid text-center">    
+  <div class="row content">
+      <div class="col-sm-2 sidenav">
+          
+      </div>
+ <div class="col-sm-8 text-left">
 <h2>Combattant(s)</h2>
 <table class="table table-hover">
     <tr><th>Nom</th><th>Niveau</th><th>XP</th><th>Vu</th><th>Force</th><th>Points de vie</th><th></th></tr>
@@ -43,8 +48,14 @@ echo $this->Form->end();
 
 echo $this->Form->create('Fighter');
 echo $this->Form->hidden('create', ['value' =>'yes']);
-echo $this->Form->button('Creer un nouveau combattant');
+echo $this->Form->button('Creer un nouveau combattant',['class'=>'btn btn-warning']);
 echo $this->Form->end();?>
+ </div>
+      <div class="col-sm-2 sidenav">
+          
+      </div>
+  </div>
+</div>
      
 
 

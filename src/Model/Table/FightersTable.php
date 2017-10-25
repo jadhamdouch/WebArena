@@ -20,6 +20,12 @@ public function getBestFighter(){
         return $temp->first();
     }
     
+    public function getFighterName($fighterId){
+        $temp = $this->find('all', array('conditions' => array('id' => $fighterId)));
+        $name = $temp->first();
+        return $name['name'];
+    }
+    
         public function getFighters($player){
         $temp = $this->find('all', array('conditions' => array('player_id' => $player)));
         return $temp;

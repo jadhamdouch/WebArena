@@ -81,8 +81,17 @@ class ArenasController extends AppController {
         if (!empty($this->request->data['name'])) {
             $fighterName = $this->request->data['name'];
             $this->Fighters->createFighter($playerID, $fighterName);
+            $filename = strtolower(
+                                    pathinfo(
+                                            $this->request->data['avatar_file']['name'],
+                                            PATHINFO_EXTENSION));
+            if(!empty($this->request->data['avatar_file']['tmp_name'])&&
+                    in_array($filename ,array('jpg','jpeg','png'))){
+                move_uploaded_file($this->request->data['avatar_file']['tmp_name'], 'img' . DS. 'avatars' . DS . $playerID .$this->request->data['name']. '.' . $filename );
+                
+            }
             $this->redirect(['action' => 'fighter']);
-            $file = $this->request->data['submittedfile'];
+            
         }
     }
 
@@ -92,6 +101,10 @@ class ArenasController extends AppController {
         }
         $this->loadModel('Fighters');
         $fighterID = $this->request->session()->read('selectedFighterId');
+        $playerID = $this->request->session()->read('playerId');
+        $fighterName =$this->Fighters->getFighterName($fighterID) ;
+        $avatar = $playerID .$fighterName."."."jpg";
+        $this->set("avatar",$avatar);
         $fighter = $this->Fighters->getFighter($fighterID);
         $this->set("fighter", $fighter);
         if($this->request->is('post') && $this->request->data['add']=='sight'){
