@@ -87,6 +87,9 @@ class ArenasController extends AppController {
     }
 
     public function sight() {
+        if ($this->request->session()->check('playerId') == NULL) {
+            $this->redirect(['action' => 'login']);
+        }
         $this->loadModel('Fighters');
         $fighterID = $this->request->session()->read('selectedFighterId');
         $fighter = $this->Fighters->getFighter($fighterID);

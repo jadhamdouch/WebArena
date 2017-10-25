@@ -33,7 +33,7 @@ public function getBestFighter(){
       $fighter->coordinate_x = 1;
       $fighter->coordinate_y = 1;
       $fighter->level = 1;
-      $fighter->xp = 8;
+      $fighter->xp = 16;
       $fighter->skill_sight = 0;
       $fighter->skill_strength = 0;
       $fighter->skill_health = 0;
@@ -47,6 +47,8 @@ public function getBestFighter(){
         $query = $this->find('all', array('conditions' => array('id' => $fighterId)));
         $fighter = $query->first();
         $fighter['level'] = $fighter['level'] + 1; 
+        $health = $fighter['skill_health'];
+        $fighter['current_health'] = $health;
         $this->save($fighter); 
     }
     
@@ -60,9 +62,44 @@ public function getBestFighter(){
             $fighter['skill_sight']= $sightF ;
             $this->save($fighter); 
             $this->passerNiveau($fighterId);
+            
         }
         else{
+            echo 'vous n\'avez pas assez d\'xp';
+        }
+    }
+    
+    public function addStrength($fighterId){
+        $query = $this->find('all', array('conditions' => array('id' => $fighterId)));
+        $fighter = $query->first();
+        $levelF = $fighter['level'];
+        $xpF = $fighter['xp'];
+        $strength = $fighter['skill_strength'] +1;
+        if($xpF/4 - $levelF >=0){
+            $fighter['skill_strength']= $strength ;
+            $this->save($fighter); 
+            $this->passerNiveau($fighterId);
             
+        }
+        else{
+            echo 'vous n\'avez pas assez d\'xp';
+        }
+    }
+    
+    public function addHealth($fighterId){
+        $query = $this->find('all', array('conditions' => array('id' => $fighterId)));
+        $fighter = $query->first();
+        $levelF = $fighter['level'];
+        $xpF = $fighter['xp'];
+        $health = $fighter['skill_health'] +1;
+        if($xpF/4 - $levelF >=0){
+            $fighter['skill_health']= $health ;
+            $this->save($fighter); 
+            $this->passerNiveau($fighterId);
+            
+        }
+        else{
+            echo 'vous n\'avez pas assez d\'xp';
         }
     }
                 

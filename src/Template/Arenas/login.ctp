@@ -8,7 +8,7 @@ $this->assign('title', 'Login');?>
 echo $this->Form->hidden('con', ['value' => 'login']);
 echo $this->Form->input('email', ['type' => 'email']);
 echo $this->Form->input('password', ['type' => 'password']);
-echo $this->Form->submit('Login');
+echo $this->Form->submit('Login',['class'=> 'btn btn-primary']);
 echo $this->Form->end();
 ?>
 
@@ -16,10 +16,10 @@ echo $this->Form->end();
 <legend><?php echo ('Please complete the following form'); ?></legend>
 <?php
 echo $this->Form->hidden('con', ['value' => 'register']);
-echo $this->Form->input('emailC', ['type' => 'email']);
-echo $this->Form->input('passwordC', ['type' => 'password']);
-echo $this->Form->input('passwordC2', ['type' => 'password']);
-echo $this->Form->submit('Creer');
+echo $this->Form->input('SaisirVotreEmail', ['type' => 'email']);
+echo $this->Form->input('SaisirVotrePassword', ['type' => 'password']);
+echo $this->Form->input('ConfirmerPassword', ['type' => 'password']);
+echo $this->Form->submit('Creer',['class'=> 'btn btn-primary']);
 echo $this->Form->end();
 ?>
 

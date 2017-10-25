@@ -28,7 +28,7 @@ foreach ($fighters as $f => $fighter){
     echo $fighter["current_health"]."/".$fighter["skill_health"];
     echo '</td>';
     echo '<td>';
-    echo $this->Form->submit('Choisir');
+    echo $this->Form->submit('Choisir',['class'=> 'btn btn-info']);
     echo '</td>';
     echo'</tr>';
   
