@@ -19,7 +19,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <html>
 <head>
     <?= $this->Html->charset() ?>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         <?= $cakeDescription ?>:
@@ -27,14 +27,9 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     </title>
     <?= $this->Html->meta('icon') ?>
 
-    <?= $this->Html->css('base.css') ?>
-    <?= $this->Html->css('cake.css') ?>
-    <?= $this->Html->css('bootstrap.css') ?>
-    <?= $this->Html->css('bootstrap-grid.min.css') ?>
-    <?= $this->Html->css('bootstrap-reboot.min.css') ?>
-    
-   <?= $this->Html->script('bootstrap.min.js')?>
 
+    <?= $this->Html->css('bootstrap.css') ?>
+ 
     
 
     <?= $this->fetch('meta') ?>
@@ -43,24 +38,30 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 </head>
 <body>
     
-    <nav class="top-bar expanded" data-topbar role="navigation">
-        <ul class="title-area large-3 medium-4 columns">
-            <li class="name">
-                <h1><a href=""><?= $this->fetch('title') ?></a></h1>
-            </li>
-        </ul>
-        <div class="top-bar-section">
-            <ul class="right">
-                
-                <li><?php echo $this->Html->link('Login', array('controller' => 'Arenas', 'action' => 'login')); ?></li>
-                <li><?php echo $this->Html->link('Logout', array('controller' => 'Arenas', 'action' => 'logout')); ?></li>
-                <li><?php echo $this->Html->link('Index', array('controller' => 'Arenas', 'action' => '/')); ?></li>
+    <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Logo</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><?php echo $this->Html->link('Index', array('controller' => 'Arenas', 'action' => '/')); ?></li>
                 <li><?php echo $this->Html->link('Vision', array('controller' => 'Arenas', 'action' => 'sight')); ?></li>
                 <li><?php echo $this->Html->link('Combattant', array('controller' => 'Arenas', 'action' => 'fighter')); ?></li>
                 <li><?php echo $this->Html->link('Diary', array('controller' => 'Arenas', 'action' => 'diary')); ?></li>
-            </ul>
-        </div>
-    </nav>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><span class="glyphicon glyphicon-log-in"></span> <?php echo $this->Html->link('Login', array('controller' => 'Arenas', 'action' => 'login')); ?></li>
+        <li><span class="glyphicon glyphicon-log-in"></span> <?php echo $this->Html->link('Logout', array('controller' => 'Arenas', 'action' => 'logout')); ?></li>
+      </ul>
+    </div>
+  </div>
+</nav>
     <?= $this->Flash->render() ?>
     <div class="container clearfix">
         <?= $this->fetch('content') ?>
