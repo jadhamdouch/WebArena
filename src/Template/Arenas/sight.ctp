@@ -4,7 +4,7 @@ $this->assign('title', 'Sight');?>
 <div class="container-fluid text-center">    
   <div class="row content">
       <div class="col-sm-2 sidenav">
-          
+           <?php echo $this->Html->image("avatars/".$avatar,array('class'=>'av'));?>
       </div>
  <div class="col-sm-8 text-left">
 <table class="table">
