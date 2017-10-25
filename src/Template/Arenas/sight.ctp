@@ -5,10 +5,8 @@ $this->assign('title', 'Sight');?>
   <div class="row content">
       <div class="col-sm-2 sidenav">
            <?php echo $this->Html->image("avatars/".$avatar,array('class'=>'av'));?>
-      </div>
- <div class="col-sm-8 text-left">
-<table class="table">
-    <tr class="info"><th></th><th>Nom</th><th>Niveau</th><th>XP</th><th>Vu</th><th>Force</th><th>Points de vie</th></tr>
+          <table class="table">
+    
 <?php    
 echo '<tr class="active">';
     echo '<td>';
@@ -17,12 +15,15 @@ echo '<tr class="active">';
     echo '<td>';
     echo $fighter["name"];
     echo '</td>';
+    echo '</tr><tr><td>Level</td>';
     echo '<td>';
     echo $fighter["level"];
     echo '</td>';
+    echo '</tr><tr><td>xp</td>';
     echo '<td>';
     echo $fighter["xp"];
     echo '</td>';
+    echo '</tr><tr><td>Vu</td>';
     echo '<td>';
     echo $this->Form->create('fighter');
     echo $this->Form->hidden('add', ['value' =>'sight']);
@@ -30,6 +31,7 @@ echo '<tr class="active">';
     echo $this->Form->submit('+',['class'=> 'btn btn-success ']);
     echo $this->Form->end();
     echo '</td>';
+    echo '</tr><tr><td>Force</td>';
     echo '<td>';
     echo $this->Form->create('fighter');
     echo $this->Form->hidden('add', ['value' =>'strength']);
@@ -37,6 +39,7 @@ echo '<tr class="active">';
     echo $this->Form->submit('+',['class'=> 'btn btn-success']);
     echo $this->Form->end();
     echo '</td>';
+    echo '</tr><tr><td>Vie</td>';
     echo '<td>';
     echo $this->Form->create('fighter');
     echo $this->Form->hidden('add', ['value' =>'health']);
@@ -47,6 +50,9 @@ echo '<tr class="active">';
 
     echo'</tr>';?>
 </table>
+      </div>
+ <div class="col-sm-8 text-left">
+
      </div>
       <div class="col-sm-2 sidenav">
           
