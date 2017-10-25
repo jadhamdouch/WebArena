@@ -1,10 +1,16 @@
 <?php
 
 $this->assign('title', 'Sight');?>
-<table>
-    <tr><th></th><th>Nom</th><th>Niveau</th><th>XP</th><th>Vu</th><th>Force</th><th>Points de vie</th></tr>
+<div class="container-fluid text-center">    
+  <div class="row content">
+      <div class="col-sm-2 sidenav">
+          
+      </div>
+ <div class="col-sm-8 text-left">
+<table class="table">
+    <tr class="info"><th></th><th>Nom</th><th>Niveau</th><th>XP</th><th>Vu</th><th>Force</th><th>Points de vie</th></tr>
 <?php    
-echo '<tr>';
+echo '<tr class="active">';
     echo '<td>';
     echo "Combattant choisi : ";
     echo '</td>';
@@ -21,7 +27,7 @@ echo '<tr>';
     echo $this->Form->create('fighter');
     echo $this->Form->hidden('add', ['value' =>'sight']);
     echo $fighter["skill_sight"];
-    echo $this->Form->submit('+',['class'=> 'btn btn-success']);
+    echo $this->Form->submit('+',['class'=> 'btn btn-success ']);
     echo $this->Form->end();
     echo '</td>';
     echo '<td>';
@@ -35,9 +41,15 @@ echo '<tr>';
     echo $this->Form->create('fighter');
     echo $this->Form->hidden('add', ['value' =>'health']);
     echo $fighter["current_health"]."/".$fighter["skill_health"];
-    echo $this->Form->submit('+',['class'=> 'btn btn-success']);
+    echo $this->Form->submit('+',['class'=> 'btn btn-success','before' => '<p><label>VOILA</label>','after']);
     echo $this->Form->end();
     echo '</td>';
 
     echo'</tr>';?>
 </table>
+     </div>
+      <div class="col-sm-2 sidenav">
+          
+      </div>
+  </div>
+</div>
