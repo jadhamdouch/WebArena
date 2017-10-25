@@ -19,7 +19,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <html>
 <head>
     <?= $this->Html->charset() ?>
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         <?= $cakeDescription ?>:
@@ -56,8 +56,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                 <li><?php echo $this->Html->link('Diary', array('controller' => 'Arenas', 'action' => 'diary')); ?></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><span class="glyphicon glyphicon-log-in"></span> <?php echo $this->Html->link('Login', array('controller' => 'Arenas', 'action' => 'login')); ?></li>
-        <li><span class="glyphicon glyphicon-log-in"></span> <?php echo $this->Html->link('Logout', array('controller' => 'Arenas', 'action' => 'logout')); ?></li>
+        <li> <?php echo $this->Html->link($this->Html->tag('span',' Login',array('class'=>'glyphicon glyphicon-log-in')), array('controller' => 'Arenas', 'action' => 'login'),array('escape'=>false)); ?></li>
+        <li> <?php echo $this->Html->link($this->Html->tag('span',' Logout',array('class'=>'glyphicon glyphicon-log-out')), array('controller' => 'Arenas', 'action' => 'logout'),array('escape'=>false)); ?></li>
       </ul>
     </div>
   </div>
