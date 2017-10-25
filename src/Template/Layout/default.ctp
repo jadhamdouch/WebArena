@@ -39,7 +39,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 </head>
 <body>
     
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-inverse menuCol">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -50,7 +50,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
       <?php echo $this->Html->image('logo.png',array('class'=>'navbar-brand'));?>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav ">
         <li><?php echo $this->Html->link('Index', array('controller' => 'Arenas', 'action' => '/')); ?></li>
                 <li><?php echo $this->Html->link('Vision', array('controller' => 'Arenas', 'action' => 'sight')); ?></li>
                 <li><?php echo $this->Html->link('Combattant', array('controller' => 'Arenas', 'action' => 'fighter')); ?></li>
