@@ -1,7 +1,7 @@
 
  
 <h2>Combattant(s)</h2>
-<table>
+<table class="table table-hover">
     <tr><th>Nom</th><th>Niveau</th><th>XP</th><th>Vu</th><th>Force</th><th>Points de vie</th><th></th></tr>
 <?php  $i=0;
 foreach ($fighters as $f => $fighter){
