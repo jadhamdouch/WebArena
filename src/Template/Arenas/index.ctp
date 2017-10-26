@@ -1,7 +1,3 @@
-<?php $this->assign('title', 'Index');?>
- <?php echo $myname;?> dans WebArena
- <?php echo $var;?>
-
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
