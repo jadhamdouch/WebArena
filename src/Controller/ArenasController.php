@@ -105,7 +105,7 @@ class ArenasController extends AppController {
         $fighterName =$this->Fighters->getFighterName($fighterID) ;
         $this->set("x",$this->Fighters->getFighterX($fighterID));
         $this->set("y",$this->Fighters->getFighterY($fighterID));
-        $avatar = $playerID .$fighterName."."."jpg";
+        $avatar = $playerID .$fighterName;
         $this->set("avatar",$avatar);
         $fighter = $this->Fighters->getFighter($fighterID);
         $this->set("fighter", $fighter);
