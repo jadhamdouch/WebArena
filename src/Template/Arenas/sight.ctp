@@ -58,16 +58,23 @@ echo '<tr class="active">';
         if(isset($line[1])){
             foreach ($line as $j => $square){
                 echo '<td>';
-              
-                if(gettype($square) == 'integer'){
+                $dist = abs($j - $sessionFighter['coordinate_x']+1) + abs($i - $sessionFighter['coordinate_y']+1);
+                if($dist < 0){ $dist = 0 - $dist; }
+                if($dist > $sessionFighter['skill_sight']){
+                    echo $this->Html->image('fog.jpg',array("class"=>"imgDam"));
+                }else{
+                    if(gettype($square) == 'integer'){
                     echo $this->Html->image('ground.jpg',array("class"=>"imgDam"));
-                    }
-                    else{
+                    }else{
                         if(isset($square['player_id'])){
                             echo $this->Html->image("avatars/".$square['player_id'].$square['name'],array("class"=>"imgDam",'title' => $square['name']));
-                    }
-                    
+                        }else{
+                            if(isset($square['bonus'])){
+                                echo $this->Html->image($square['type'] . $square['bonus'] . '.jpg', ['alt' => 'weapon' . $square['bonus']]);
+                            }
                         }
+                    }
+                }
                 
                 echo '</td>';
             }
