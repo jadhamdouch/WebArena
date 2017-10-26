@@ -53,7 +53,7 @@
         <div class='row'>
             <div id="Archer" class="col-sm-6" >
                 <h4>Archer</h4>
-                <img src="webroot/img/Personnages/Archer/ArchèreTemporaire.jpg" class="img-responsive" style="width:100%" alt="Image">
+                <img src="webroot/img/Personnages/Archer/cratte.png" class="img-responsive" style="width:100%" alt="Image">
             </div>
 
             <div class="col-sm-6" >
@@ -76,7 +76,7 @@
         <div class='row'>
             <div id="Combattant" class="col-sm-6"> 
                 <h4>Combattant</h4> 
-                <img src="webroot/img/Personnages/Combattant/CombattanteTemporaire.jpg" class="img-responsive" style="width:100%" alt="Image">
+                <img src="webroot/img/Personnages/Combattant/iop" class="img-responsive" style="width:100%" alt="Image">
             </div>
 
             <div class="col-sm-6" >
