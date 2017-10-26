@@ -108,6 +108,15 @@ public function getBestFighter(){
             echo 'vous n\'avez pas assez d\'xp';
         }
     }
+    public function displayFighters($map){
+        $temp = $this->find('all');
+        foreach($temp as $fighter){
+            if($fighter['coordinate_x'] != -1 && $fighter['coordinate_y'] != -1){
+                $map[$fighter['coordinate_x']][$fighter['coordinate_y']] = $fighter;
+            }
+        }
+        return $map;
+    }
                 
    
     
