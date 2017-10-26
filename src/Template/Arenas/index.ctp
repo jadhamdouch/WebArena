@@ -29,6 +29,7 @@
                 </div>
             </div>
         </nav>
+        <div class='row'>
         <div id="Archer" class="col-sm-4" >
             <p>Archer</p>
             <img src="webroot/img/Personnages/Archer/ArchèreTemporaire.jpg" class="img-responsive" style="width:100%" alt="Image">
@@ -39,6 +40,8 @@
             <p>Leur beauté est aussi redoutable que leurs flèches. Il est dit que seuls les disciples Archer de WebArena peuvent se regarder entre eux sans succomber à leur charme dans la seconde... Pour devenir des disciples archers il faire preuve d'une pureté à toute épreuve ! Il faut reconnaître que ce n'est pas évident... </p>
             <p>Vous l'aurez compris, les archers de WebArena sont redoutables, experts dans leur domaine. Leur vue perçante leur permet de superviser le combat, pour autant, ils ne retiennent pas leurs coups, bien à l'abri dans leurs cachètes... Et comme dirait un disciple Archer de WebArena : "Il n'y a pas que mon arc que je sais bander". </p>
         </div>
+            </div>
+        <div class='row'>
 
         <div id="Mage" class="col-sm-4"> 
             <p>Mage</p> 
@@ -50,7 +53,8 @@
             <p>Leur bonté est reconnue dans toute l'Europe. Tout le monde sait qu'un magicien de WebArena est capable de merveille. Il sont capable de guérir les maladie mais aussi de lancer de puissant sortillèges. La légende racconte que pour devenir un de leur disciple il faut être choisit pour la nature elle-même... </p>
             <p>Si vous en croisez un, sachez-vous montrer courtois. Ils n'aiment pas les pollueurs donc faites attention. Il parrait que si vous réalisez une offrande à leur grand arbre sacré, un disciple viendra vous saluez... Mais attention ils n'acceptent pas tous les types d'offrandes et personne n'a encore réussit à trouver La bonne offrande. </p>
         </div>
-
+        </div>
+            <div class='row'>
         <div id="Combattant" class="col-sm-4"> 
             <p>Combattant</p> 
             <img src="webroot/img/Personnages/Combattant/CombattanteTemporaire.jpg" class="img-responsive" style="width:100%" alt="Image">
@@ -61,6 +65,7 @@
             <p>Force et agilité sont les deux mots qui décrivent le mieux les combattant de WebArena. Après avoir reçu une formation de combattant, les desciples apprennent à se servir de leur tête. Il évolue ainsi dans un monde où la stratégie devient indispensable pour survivre. </p>
             <p>Les combattant de WebArena sont très respectés par la communauté. Leur bravour est comptée jusqu'à l'ECE Paris. Si vous en croisez un n'hésitez pas de lui demander un autographe. Leur dictons est chanté dans toutes les écoles d'ingénieur d'ile de France : "Un combat, une histoire, une bonne bière". </p>
         </div>
+                </div>
     </div>
 </div><br>
 
