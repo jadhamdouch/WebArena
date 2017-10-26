@@ -1,9 +1,9 @@
 <?php
 
 $this->assign('title', 'Sight');?>
-<div class="container-fluid text-center">    
+<div class="container-fluid ">    
   <div class="row content">
-      <div class="col-sm-4 sidenav">
+      <div class="col-sm-3 sidenav">
            <?php echo $this->Html->image("avatars/".$avatar,array('class'=>'av'));?>
           <table class="table">
     
@@ -51,7 +51,7 @@ echo '<tr class="active">';
     echo'</tr>';?>
 </table>
       </div>
- <div class="col-sm-8 text-left">
+ <div class="col-sm-8 ">
 <table id="arena">
    <?php foreach($arenaMap as $i => $line){
         echo '<tr>';
