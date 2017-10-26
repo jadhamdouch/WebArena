@@ -26,6 +26,18 @@ public function getBestFighter(){
         return $name['name'];
     }
     
+    public function getFighterY($fighterId){
+        $temp = $this->find('all', array('conditions' => array('id' => $fighterId)));
+        $name = $temp->first();
+        return $name['coordinate_y'];
+    }
+    
+    public function getFighterX($fighterId){
+        $temp = $this->find('all', array('conditions' => array('id' => $fighterId)));
+        $name = $temp->first();
+        return $name['coordinate_x'];
+    }
+    
         public function getFighters($player){
         $temp = $this->find('all', array('conditions' => array('player_id' => $player)));
         return $temp;
@@ -36,14 +48,14 @@ public function getBestFighter(){
       $fighter =  $this->newEntity();
       $fighter->player_id = $idPlayer;
       $fighter->name = $fighterName;
-      $fighter->coordinate_x = 1;
-      $fighter->coordinate_y = 1;
-      $fighter->level = 1;
-      $fighter->xp = 16;
-      $fighter->skill_sight = 0;
-      $fighter->skill_strength = 0;
-      $fighter->skill_health = 0;
-      $fighter->current_health = 3;
+      $fighter->coordinate_x = rand(1,15);
+      $fighter->coordinate_y = rand(1,10);
+      $fighter->level = 0;
+      $fighter->xp = 0;
+      $fighter->skill_sight = 2;
+      $fighter->skill_strength = 1;
+      $fighter->skill_health = 5;
+      $fighter->current_health = 5;
        if($this->save($fighter)){
             $id = $fighter -> id ;
         }
@@ -112,7 +124,7 @@ public function getBestFighter(){
         $temp = $this->find('all');
         foreach($temp as $fighter){
             if($fighter['coordinate_x'] != -1 && $fighter['coordinate_y'] != -1){
-                $map[$fighter['coordinate_x']][$fighter['coordinate_y']] = $fighter;
+                $map[$fighter['coordinate_y']-1][$fighter['coordinate_x']-1] = $fighter;
             }
         }
         return $map;

@@ -1,9 +1,10 @@
+<?php $this->assign('title', 'Index');?>
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="webroot/img/Theme/EnAttendantUnBeauWebArena.jpg" alt="Image">
+
         <div class="carousel-caption">
           <h3>Une nouvelle expérience de jeu</h3>
           <p>Fait par des joueurs et pour des joueurs</p>
@@ -15,23 +16,25 @@
 <div class="container text-center">    
     
     <div>
-        <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>                        
-                </button>
-                    <a class="navbar-brand" href="#RdJ">Règle du jeu</a>
-                    <a class="navbar-brand" href="#Archer">Archer</a>
-                    <a class="navbar-brand" href="#Mage">Mage</a>
-                    <a class="navbar-brand" href="#Combattant">Combattant</a>
-                </div>
+        
+
             </div>
         </nav>
-        
+        <div class="container-fluid text-center">    
+  <div class="row content">
+<div class="col-sm-2 sidenav ">
+    <div class ="list-group">
+<ul>
+      <li><p><a class="list-group-item" href="#RdJ">Règle du jeu</a></p></li>
+      <li><p><a class="list-group-item" href="#Archer">Archer</a></p></li>
+      <li><p><a class="list-group-item" href="#Mage">Mage</a></p></li>
+      <li><p><a class="list-group-item" href="#Combattant">Combattant</a></p></li>
+</ul>
+    </div>
+    </div>
+<div class="col-sm-8 text-left">
         <h3 id = "RdJ">Règle du jeu</h3><br>
+
         <div class='row'>
             <p>Un combattant se trouve dans une arène en damier à une position X,Y. Cette position ne peut pas se trouver hors des dimension de l'arène. Un seul combattant par case. Une arène par site.</p>
             <p>Un combattant commence avec les caractéristiques suivantes : vue= 2, force=1, point de vie=5 (ces valeurs doivent être paramétrées). Il apparaît à une position libre aléatoire.</p>
@@ -84,7 +87,9 @@
         </div>
     </div>
 </div><br>
-
+</div>
+</div>
+</div>
 <footer class="container-fluid text-center">
   <p>Footer Text</p>
 </footer>

@@ -103,6 +103,8 @@ class ArenasController extends AppController {
         $fighterID = $this->request->session()->read('selectedFighterId');
         $playerID = $this->request->session()->read('playerId');
         $fighterName =$this->Fighters->getFighterName($fighterID) ;
+        $this->set("x",$this->Fighters->getFighterX($fighterID));
+        $this->set("y",$this->Fighters->getFighterY($fighterID));
         $avatar = $playerID .$fighterName."."."jpg";
         $this->set("avatar",$avatar);
         $fighter = $this->Fighters->getFighter($fighterID);
@@ -119,6 +121,14 @@ class ArenasController extends AppController {
             $this->Fighters->addHealth($fighterID);
             $this->redirect(['action' => 'sight']);
         }
+        
+        $map = array();
+        for ($i=0; $i<10; $i++){
+            $map[$i] = array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+        }
+        
+       $this->set('sessionFighter', $this->Fighters->getFighter($this->request->session()->read('selectedFighterId')));
+       $this->set('arenaMap', $this->Fighters->displayFighters($map));
         
         
     }
