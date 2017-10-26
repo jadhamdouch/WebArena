@@ -52,7 +52,7 @@ echo '<tr class="active">';
 </table>
       </div>
  <div class="col-sm-8 ">
-<table id="arena">
+<table class="arena">
    <?php foreach($arenaMap as $i => $line){
         echo '<tr>';
         if(isset($line[1])){
@@ -67,6 +67,7 @@ echo '<tr class="active">';
                     echo $this->Html->image('grass.jpg',array("class"=>"imgDam"));
                     }else{
                         if(isset($square['player_id'])){
+                            
                             echo $this->Html->image("avatars/".$square['player_id'].$square['name'],array("class"=>"imgDam",'title' => $square['name']));
                         }else{
                             if(isset($square['bonus'])){
