@@ -64,7 +64,7 @@ echo '<tr class="active">';
                     }
                     else{
                         if(isset($square['player_id'])){
-                            echo $this->Html->image("avatars/".$avatar,array("class"=>"imgDam"));
+                            echo $this->Html->image("avatars/".$square['player_id'].$square['name'],array("class"=>"imgDam",'title' => $square['name']));
                     }
                     
                         }
