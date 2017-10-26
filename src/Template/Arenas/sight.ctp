@@ -3,7 +3,7 @@
 $this->assign('title', 'Sight');?>
 <div class="container-fluid text-center">    
   <div class="row content">
-      <div class="col-sm-2 sidenav">
+      <div class="col-sm-4 sidenav">
            <?php echo $this->Html->image("avatars/".$avatar,array('class'=>'av'));?>
           <table class="table">
     
@@ -52,27 +52,22 @@ echo '<tr class="active">';
 </table>
       </div>
  <div class="col-sm-8 text-left">
-
-     </div>
-      <div class="col-sm-2 sidenav">
-          
-      </div>
-      <div class="col-sm-8 text-left"> 
-      <table id="arena">
+<table id="arena">
    <?php foreach($arenaMap as $i => $line){
         echo '<tr>';
         if(isset($line[1])){
             foreach ($line as $j => $square){
                 echo '<td>';
               
-                if(($i+1) == $y && ($j+1)== $x){
-                    echo $this->Html->image("avatars/".$avatar,array("class"=>"imgDam"));
-                    //echo $sessionFighter['coordinate_x'];
-                }else{
-                   
+                if(gettype($square) == 'integer'){
                     echo $this->Html->image('ground.jpg',array("class"=>"imgDam"));
+                    }
+                    else{
+                        if(isset($square['player_id'])){
+                            echo $this->Html->image("avatars/".$avatar,array("class"=>"imgDam"));
+                    }
                     
-                }
+                        }
                 
                 echo '</td>';
             }
@@ -80,7 +75,13 @@ echo '<tr class="active">';
         echo '</tr>';
     }?>
 </table>
-</table>
+     </div>
+      <div class="col-sm-2 sidenav">
+          
       </div>
+      
+      
+
+      
   </div>
 </div>
