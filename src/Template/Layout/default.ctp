@@ -51,7 +51,7 @@
         <?= $this->fetch('content') ?>
     </div>
 <footer class="container-fluid text-center navbar-default navbar-fixed-bottom">
-  <p>Membre de la team : </p>
+  <p>Noms des développers : Ruben Bellaïche, Ismael Bouarfa, Luc Bourretère & Jad Hamdouch</p>
 </footer>
 </body>
 </html>
