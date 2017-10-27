@@ -83,14 +83,23 @@ echo '<tr class="active">';
         echo '</tr>';
     }?>
 </table>
+     
      </div>
-      <div class="col-sm-3 sidenav">
-          <table>
-              <tr><td></td><td>HAUT</td><td></td></tr>
-              <tr><td>GAUCHE</td><td></td><td>DROITE</td></tr>
-              <tr><td></td><td>BAS</td><td></td></tr>
+      <div class="center-block">
+      
+          <table >
+              <tr><td></td><td>
+                  <?php echo $this->Form->create('flecheH');
+    echo $this->Form->hidden('fleche', ['value' =>'sight']);
+    echo $this->Form->submit('Haut',['class'=> 'btn btn-success']);
+    echo $this->Form->end();
+    ?>
+                  </td><td></td></tr>
               
+              <tr><td>GAUCHE</td><td></td><td>DROITE</td></tr>
+              <tr><td></td><td>BAS</td><td></td></tr> 
           </table>
+     
       </div>
       
       
