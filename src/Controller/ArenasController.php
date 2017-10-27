@@ -122,10 +122,20 @@ class ArenasController extends AppController {
             $this->redirect(['action' => 'sight']);
         }
         
+        else if($this->request->is('post') && $this->request->data['fleche']=='HAUT' ){
+            $dir = $this->request->data('dir');
+            $ff =$this->Fighters->getFighter($this->request->session()->read('fighterId'));
+            $this->Fighters->move($dir, $this->request->session()->read('fighterId'));
+            $this->Events->move($dir, 1);
+            $this->redirect(['action' => 'sight']);
+        }
         $map = array();
         for ($i=0; $i<10; $i++){
             $map[$i] = array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
         }
+        //moving the session fighter if needed
+        
+        
         
        $this->set('sessionFighter', $this->Fighters->getFighter($this->request->session()->read('selectedFighterId')));
        $this->set('arenaMap', $this->Fighters->displayFighters($map));

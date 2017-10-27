@@ -9,21 +9,21 @@ $this->assign('title', 'Sight');?>
     
 <?php    
 echo '<tr class="active">';
-    echo '<td>';
+    echo '<td >';
     echo "Combattant choisi : ";
     echo '</td>';
     echo '<td>';
     echo $fighter["name"];
     echo '</td>';
-    echo '</tr><tr><td>Level</td>';
+    echo '</tr ><tr class="info"><td>Level</td>';
     echo '<td>';
     echo $fighter["level"];
     echo '</td>';
-    echo '</tr><tr><td>xp</td>';
+    echo '</tr><tr class="info"><td>xp</td>';
     echo '<td>';
     echo $fighter["xp"];
     echo '</td>';
-    echo '</tr><tr><td>Vu</td>';
+    echo '</tr><tr class="info"><td>Vu</td>';
     echo '<td>';
     echo $this->Form->create('fighter');
     echo $this->Form->hidden('add', ['value' =>'sight']);
@@ -31,7 +31,7 @@ echo '<tr class="active">';
     echo $this->Form->submit('+',['class'=> 'btn btn-success ']);
     echo $this->Form->end();
     echo '</td>';
-    echo '</tr><tr><td>Force</td>';
+    echo '</tr ><tr class="info"><td>Force</td>';
     echo '<td>';
     echo $this->Form->create('fighter');
     echo $this->Form->hidden('add', ['value' =>'strength']);
@@ -39,7 +39,7 @@ echo '<tr class="active">';
     echo $this->Form->submit('+',['class'=> 'btn btn-success']);
     echo $this->Form->end();
     echo '</td>';
-    echo '</tr><tr><td>Vie</td>';
+    echo '</tr><tr class="info"><td>Vie</td>';
     echo '<td>';
     echo $this->Form->create('fighter');
     echo $this->Form->hidden('add', ['value' =>'health']);
@@ -101,6 +101,11 @@ echo '<tr class="active">';
           </table>
      
       </div>
+      <section class="col-md-12" id= "noborder"><?php      
+      echo $this->Form->create('flecheH');
+      echo $this->Form->hidden('fleche', ['value' =>'HAUT']);
+      echo $this->Form->postButton('<span class="glyphicon glyphicon-arrow-up"></span>', '/arenas/sight', ['value' => 'north', 'class' => 'btn btn-primary btn-block', 'name' => 'dir']);
+      echo $this->Form->end();?></section>
       
       
 

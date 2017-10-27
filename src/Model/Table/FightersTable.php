@@ -129,6 +129,8 @@ public function getBestFighter(){
         }
         return $map;
     }
+    
+
                 
    
     
