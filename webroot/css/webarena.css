@@ -10,3 +10,15 @@ body{background-image:url(../img/Theme/arenafighter.jpg);background-size:contain
 .arena{border:5px solid #6699ff;
 border-collapse : collapse;
 }
+html, body {
+	height: 100%;
+	margin: 0; padding: 0;
+}
+body {
+	display : table;
+	width: 100%;
+}
+footer {
+	display : table-row;
+	height: 50px; /* à titre d'exemple */
+}

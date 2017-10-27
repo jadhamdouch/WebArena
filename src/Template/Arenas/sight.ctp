@@ -107,7 +107,6 @@ echo '<tr class="active">';
       echo $this->Form->postButton('<span class="glyphicon glyphicon-arrow-up"></span>', '/arenas/sight', ['value' => 'north', 'class' => 'btn btn-primary btn-block', 'name' => 'dir']);
       echo $this->Form->end();?></section>
       
-      
 
       
   </div>
