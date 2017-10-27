@@ -32,7 +32,7 @@
       </button>
       <?php echo $this->Html->image('logo.png',array('class'=>'navbar-brand'));?>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
+    <div class="collapse navbar-collapse "  data-spy="affix" data-offset-top="1">
       <ul class="nav navbar-nav ">
         <li><?php echo $this->Html->link('Index', array('controller' => 'Arenas', 'action' => '/')); ?></li>
                 <li><?php echo $this->Html->link('Vision', array('controller' => 'Arenas', 'action' => 'sight')); ?></li>
