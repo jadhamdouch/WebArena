@@ -84,8 +84,13 @@ echo '<tr class="active">';
     }?>
 </table>
      </div>
-      <div class="col-sm-2 sidenav">
-          
+      <div class="col-sm-3 sidenav">
+          <table>
+              <tr><td></td><td>HAUT</td><td></td></tr>
+              <tr><td>GAUCHE</td><td></td><td>DROITE</td></tr>
+              <tr><td></td><td>BAS</td><td></td></tr>
+              
+          </table>
       </div>
       
       
