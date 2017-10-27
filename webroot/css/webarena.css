@@ -3,9 +3,10 @@ table,th {
 }
 .av{width:200px;
 height:200px;}
-.menuCol{background-color:#669999;}
+.menuCol{background-color:#996633;}
 .imgDam{width:50px;
 height:50px;}
-body{background-image:url(../img/Theme/EnAttendantUnBeauWebArena.jpg);}
+body{background-image:url(../img/Theme/arenafighter.jpg);background-size:contain;background-attachment:fixed;}
 .arena{border:5px solid #6699ff;
-border-collapse : collapse;}
+border-collapse : collapse;
+}
