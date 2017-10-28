@@ -50,8 +50,14 @@
     <div class="container clearfix">
         <?= $this->fetch('content') ?>
     </div>
-<footer class="container-fluid text-center navbar-default navbar-fixed-bottom">
-  <p>Noms des développers : Ruben Bellaïche, Ismael Bouarfa, Luc Bourretère & Jad Hamdouch</p>
+<footer class="container-fluid text-center ">
+  <p>Tags: 
+    <a href="#"><span class="label label-info">GitHub Log</span></a> 
+	| <i class="icon-user"></i> <a href="#">SI2</a> 
+	| <i class="icon-calendar"></i> Jad Hamdouch | Ismael Bouarfa | Ruebn Bellaiche | Luc Bourretere 
+ 	| <i class="icon-comment"></i> <a href="#">3 Comments</a>
+   	| <i class="icon-share"></i> <a href="#">39 Shares</a>
+</p>
 </footer>
 </body>
 </html>
