@@ -90,24 +90,34 @@ echo '<tr class="active">';
           <table >
               <tr><td></td><td>
                   <?php echo $this->Form->create('flecheH');
-    echo $this->Form->hidden('fleche', ['value' =>'sight']);
+    echo $this->Form->hidden('add', ['value' =>'haut']);
     echo $this->Form->submit('Haut',['class'=> 'btn btn-success']);
     echo $this->Form->end();
     ?>
                   </td><td></td></tr>
               
-              <tr><td>GAUCHE</td><td></td><td>DROITE</td></tr>
-              <tr><td></td><td>BAS</td><td></td></tr> 
+              <tr><td><?php echo $this->Form->create('flecheH');
+    echo $this->Form->hidden('add', ['value' =>'gauche']);
+    echo $this->Form->submit('Gauche',['class'=> 'btn btn-success']);
+    echo $this->Form->end();
+    ?></td><td></td><td><?php echo $this->Form->create('flecheH');
+    echo $this->Form->hidden('add', ['value' =>'droite']);
+    echo $this->Form->submit('Droite',['class'=> 'btn btn-success']);
+    echo $this->Form->end();
+    ?></td></tr>
+              <tr><td></td><td><?php echo $this->Form->create('flecheH');
+    echo $this->Form->hidden('add', ['value' =>'bas']);
+    echo $this->Form->submit('Bas',['class'=> 'btn btn-success']);
+    echo $this->Form->end();
+    ?></td><td></td></tr> 
           </table>
      
       </div>
-      <section class="col-md-12" id= "noborder"><?php      
-      echo $this->Form->create('flecheH');
-      echo $this->Form->hidden('fleche', ['value' =>'HAUT']);
-      echo $this->Form->postButton('<span class="glyphicon glyphicon-arrow-up"></span>', '/arenas/sight', ['value' => 'north', 'class' => 'btn btn-primary btn-block', 'name' => 'dir']);
-      echo $this->Form->end();?></section>
+      
       
 
       
   </div>
 </div>
+<br>
+<br>

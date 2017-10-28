@@ -130,7 +130,57 @@ public function getBestFighter(){
         return $map;
     }
     
+public function moveUp ($fighterId){
+    $query = $this->find('all', array('conditions' => array('id' => $fighterId)));
+        $fighter = $query->first();
+        $y =$fighter['coordinate_y']-1;
+        $x =$fighter['coordinate_x'];
+        $test = $this->find('all',array('conditions' => array('coordinate_y' => $y,'coordinate_x' => $x)));
+        $nb = $test -> count();
+        if($nb == 0){
+            $fighter['coordinate_y'] = $y;
+            $this->save($fighter); 
+        }
+}
 
+public function moveDown ($fighterId){
+    $query = $this->find('all', array('conditions' => array('id' => $fighterId)));
+        $fighter = $query->first();
+        $y =$fighter['coordinate_y']+1;
+        $x =$fighter['coordinate_x'];
+        $test = $this->find('all',array('conditions' => array('coordinate_y' => $y,'coordinate_x' => $x)));
+        $nb = $test -> count();
+        if($nb == 0){
+            $fighter['coordinate_y'] = $y;
+            $this->save($fighter); 
+        }
+}
+
+public function moveRight ($fighterId){
+    $query = $this->find('all', array('conditions' => array('id' => $fighterId)));
+        $fighter = $query->first();
+        $y =$fighter['coordinate_y'];
+        $x =$fighter['coordinate_x']+1;
+        $test = $this->find('all',array('conditions' => array('coordinate_y' => $y,'coordinate_x' => $x)));
+        $nb = $test -> count();
+        if($nb == 0){
+            $fighter['coordinate_x'] = $x;
+            $this->save($fighter); 
+        }
+}
+
+public function moveLeft ($fighterId){
+    $query = $this->find('all', array('conditions' => array('id' => $fighterId)));
+        $fighter = $query->first();
+        $y =$fighter['coordinate_y'];
+        $x =$fighter['coordinate_x']-1;
+        $test = $this->find('all',array('conditions' => array('coordinate_y' => $y,'coordinate_x' => $x)));
+        $nb = $test -> count();
+        if($nb == 0){
+            $fighter['coordinate_x'] = $x;
+            $this->save($fighter); 
+        }
+}
                 
    
     

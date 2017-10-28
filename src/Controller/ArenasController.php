@@ -122,11 +122,23 @@ class ArenasController extends AppController {
             $this->redirect(['action' => 'sight']);
         }
         
-        else if($this->request->is('post') && $this->request->data['fleche']=='HAUT' ){
-            $dir = $this->request->data('dir');
-            $ff =$this->Fighters->getFighter($this->request->session()->read('fighterId'));
-            $this->Fighters->move($dir, $this->request->session()->read('fighterId'));
-            $this->Events->move($dir, 1);
+        else if($this->request->is('post') && $this->request->data['add']=='haut' ){
+            $this->Fighters->moveUp($fighterID);
+            $this->redirect(['action' => 'sight']);
+        }
+        
+        else if($this->request->is('post') && $this->request->data['add']=='bas' ){
+            $this->Fighters->moveDown($fighterID);
+            $this->redirect(['action' => 'sight']);
+        }
+        
+        else if($this->request->is('post') && $this->request->data['add']=='droite' ){
+            $this->Fighters->moveRight($fighterID);
+            $this->redirect(['action' => 'sight']);
+        }
+        
+        else if($this->request->is('post') && $this->request->data['add']=='gauche' ){
+            $this->Fighters->moveLeft($fighterID);
             $this->redirect(['action' => 'sight']);
         }
         $map = array();
