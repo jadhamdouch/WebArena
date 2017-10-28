@@ -51,6 +51,8 @@ echo '<tr class="active">';
     echo'</tr>';?>
 </table>
       </div>
+      <div class ="container">
+     
  <div class="col-sm-8 ">
 <table class="arena">
    <?php foreach($arenaMap as $i => $line){
@@ -111,13 +113,14 @@ echo '<tr class="active">';
     echo $this->Form->end();
     ?></td><td></td></tr> 
           </table>
+          
+          
      
       </div>
       
       
 
-      
-  </div>
+
 </div>
 <br>
 <br>
