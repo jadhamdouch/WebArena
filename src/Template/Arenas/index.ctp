@@ -24,18 +24,13 @@ $this->assign('title', 'Index');?>
 </nav>
 <div class="container-fluid text-center">    
     <div class="row content">
-        <div class="col-sm-2 sidenav ">
-            <div class ="list-group">
-                <ul class="list-unstyled">
-                    <li><p><a class="list-group-item" href="#RdJ">Règle du jeu</a></p></li>
-                    <li><p><a class="list-group-item" href="#Archer">Archer</a></p></li>
-                    <li><p><a class="list-group-item" href="#Mage">Mage</a></p></li>
-                    <li><p><a class="list-group-item" href="#Combattant">Combattant</a></p></li>
-                </ul>
+        <div class="col-sm-2 sidenav">
+            <div class ="list-group ">
+                
             </div>
         </div>
         <div class="col-sm-8 text-left">
-            <h3 id = "RdJ">Règle du jeu</h3><br>
+            <h3 class="text-center">Règle du jeu</h3><br>
 
             <div class='row'>
                 <p>Un combattant se trouve dans une arène en damier à une position X,Y. Cette position ne peut pas se trouver hors des dimension de l'arène. Un seul combattant par case. Une arène par site.</p>
@@ -51,7 +46,7 @@ $this->assign('title', 'Index');?>
                 <p>   Chaque action provoque la création d'un événement avec une description claire. Par exemple : « jonh attaque bill et le touche ».</p>
             </div>
 
-            <h3>Voici les personnages que vous pouvez incarner</h3><br>
+            <h3 class="text-center">Voici les personnages que vous pouvez incarner</h3><br>
             <div class='row'>
                 <div id="Archer" class="col-sm-6" >
                     <h4>Archer</h4>
