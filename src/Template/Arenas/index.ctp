@@ -26,7 +26,7 @@ $this->assign('title', 'Index');?>
     <div class="row content">
         <div class="col-sm-2 sidenav ">
             <div class ="list-group">
-                <ul>
+                <ul class="list-unstyled">
                     <li><p><a class="list-group-item" href="#RdJ">Règle du jeu</a></p></li>
                     <li><p><a class="list-group-item" href="#Archer">Archer</a></p></li>
                     <li><p><a class="list-group-item" href="#Mage">Mage</a></p></li>
@@ -92,7 +92,5 @@ $this->assign('title', 'Index');?>
 </div>
 </div>
 </div>
-<footer class="container-fluid text-center">
-    <p>Footer Text</p>
-</footer>
+
 
