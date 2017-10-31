@@ -200,11 +200,15 @@ public function attUp ($fighterId){
             $fighterToAttack['coordinate_x'] = -1;
             $fighterToAttack['coordinate_y'] = -1;
             $this->save($fighterToAttack);
+            $fighter['xp'] = $fighter['xp']+ $fighterToAttack['level'] +1 ;
+            $this->save($fighter);
             return $fighterToAttack['name'].' et le tue!';
             }
             else {
                 $fighterToAttack['current_health'] = $finalHealth ;
                 $this->save($fighterToAttack);
+                $fighter['xp'] = $fighter['xp'] +1 ;
+                 $this->save($fighter);
                  return $fighterToAttack['name'];
                 
             }   
@@ -228,11 +232,15 @@ public function attUp ($fighterId){
             $fighterToAttack['coordinate_x'] = -1;
             $fighterToAttack['coordinate_y'] = -1;
             $this->save($fighterToAttack);
+            $fighter['xp'] =  $fighter['xp'] +$fighterToAttack['level'] +1 ;
+            $this->save($fighter);
             return $fighterToAttack['name'].' et le tue!';
             }
             else {
                 $fighterToAttack['current_health'] = $finalHealth ;
                 $this->save($fighterToAttack);
+                $fighter['xp'] = $fighter['xp'] +1 ;
+                 $this->save($fighter);
                 return $fighterToAttack['name'];
             }     } else{return $fighterToAttack['name'].' et échoue!';}  }
             
@@ -253,11 +261,15 @@ public function attUp ($fighterId){
             $fighterToAttack['coordinate_x'] = -1;
             $fighterToAttack['coordinate_y'] = -1;
             $this->save($fighterToAttack);
+            $fighter['xp'] =  $fighter['xp'] + $fighterToAttack['level'] +1 ;
+            $this->save($fighter);
             return $fighterToAttack['name'].' et le tue!';
             }
             else {
                 $fighterToAttack['current_health'] = $finalHealth ;
                 $this->save($fighterToAttack);
+                $fighter['xp'] = $fighter['xp'] +1 ;
+                 $this->save($fighter);
                 return $fighterToAttack['name'];
             }     } else{return $fighterToAttack['name'].' et échoue!';}  }
             
@@ -278,11 +290,15 @@ public function attUp ($fighterId){
             $fighterToAttack['coordinate_x'] = -1;
             $fighterToAttack['coordinate_y'] = -1;
             $this->save($fighterToAttack);
+            $fighter['xp'] =  $fighter['xp'] + $fighterToAttack['level'] +1 ;
+            $this->save($fighter);
             return $fighterToAttack['name'].' et le tue!';
             }
             else {
                 $fighterToAttack['current_health'] = $finalHealth ;
                 $this->save($fighterToAttack);
+                $fighter['xp'] = $fighter['xp'] +1 ;
+                $this->save($fighter);
                 return $fighterToAttack['name'];
             }     }else{return $fighterToAttack['name'].' et échoue!';}   }
                 

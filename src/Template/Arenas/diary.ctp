@@ -1,4 +1,4 @@
-<?php $this->assign('title', 'Diary');?>
+<?php $this->assign('title', 'Journal');?>
 
   
 <div class="container-fluid text-center">    
