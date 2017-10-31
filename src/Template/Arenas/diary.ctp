@@ -1,9 +1,13 @@
-<?php $this->assign('title', 'Sight');?>
-<section class="col-md-12 cadreprincipal">
-<section class="col-md-4">
-<section class=" col-md-12 cadresecondaire">
-    <table id="events" class="table table-striped">
-        <thead><tr><th>Events</th></tr></thead>
+<?php $this->assign('title', 'Diary');?>
+
+  
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+    </div>
+    <div class="col-sm-8 text-left"> 
+        <table id="events" class="table table-striped">
+        <thead><tr><th>Date</th><th>Evenement</th><th>[x]</th><th>[y]</th></tr></thead>
         <tbody><?php
             foreach ($events as $e){
                 echo $this->Html->tableCells([
@@ -11,6 +15,10 @@
                 ]);
             }?>
         </tbody>
-    </table>   
-</section>
-</section>
+    </table> 
+    </div>
+    <div class="col-sm-2 sidenav">
+ 
+    </div>
+  </div>
+</div>

@@ -5,8 +5,9 @@ $this->assign('title', 'Sight');?>
 <div class="container-fluid ">    
   <div class="row content">
       <div class="col-sm-3 sidenav">
-           <?php echo $this->Html->image("avatars/".$avatar,array('class'=>'av'));?>
+           
           <table class="table">
+              <tr class="default"><th></th><th><?php echo $this->Html->image("avatars/".$avatar,array('class'=>'av'));?></th></tr>
     
 <?php    
 echo '<tr class="active">';
