@@ -100,11 +100,14 @@ class ArenasController extends AppController {
             $this->redirect(['action' => 'login']);
         }
         $this->loadModel('Fighters');
+        $this->loadModel('Events');
         $fighterID = $this->request->session()->read('selectedFighterId');
         $playerID = $this->request->session()->read('playerId');
         $fighterName =$this->Fighters->getFighterName($fighterID) ;
-        $this->set("x",$this->Fighters->getFighterX($fighterID));
-        $this->set("y",$this->Fighters->getFighterY($fighterID));
+        $x = $this->Fighters->getFighterX($fighterID) ;
+        $y = $this->Fighters->getFighterY($fighterID);
+        $this->set("x",$x);
+        $this->set("y",$y);
         $avatar = $playerID .$fighterName;
         $this->set("avatar",$avatar);
         $fighter = $this->Fighters->getFighter($fighterID);
@@ -142,23 +145,31 @@ class ArenasController extends AppController {
             $this->redirect(['action' => 'sight']);
         }
         else if($this->request->is('post') && $this->request->data['add']=='attH' ){
-            $this->Fighters->attUp($fighterID);
+            $chaine =$this->Fighters->attUp($fighterID);
+            $y = $y-1;
+            $this->Events->att($fighterName,$chaine,$x,$y);
             $this->redirect(['action' => 'sight']);
             
         }
         
         else if($this->request->is('post') && $this->request->data['add']=='attB' ){
-            $this->Fighters->attDown($fighterID);
+            $chaine =$this->Fighters->attDown($fighterID);
+            $y = $y+1;
+            $this->Events->att($fighterName,$chaine,$x,$y);
             $this->redirect(['action' => 'sight']);
         }
         
         else if($this->request->is('post') && $this->request->data['add']=='attG' ){
-            $this->Fighters->attLeft($fighterID);
+            $chaine =$this->Fighters->attLeft($fighterID);
+            $x = $x-1;
+            $this->Events->att($fighterName,$chaine,$x,$y);
             $this->redirect(['action' => 'sight']);
         }
         
         else if($this->request->is('post') && $this->request->data['add']=='attD' ){
-            $this->Fighters->attRight($fighterID);
+            $chaine =$this->Fighters->attRight($fighterID);
+            $x = $x+1;
+            $this->Events->att($fighterName,$chaine,$x,$y);
             $this->redirect(['action' => 'sight']);
         }
         $map = array();

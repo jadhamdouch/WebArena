@@ -190,7 +190,7 @@ public function attUp ($fighterId){
         $test = $this->find('all',array('conditions' => array('coordinate_y' => $y,'coordinate_x' => $x)));
         $nb = $test -> count();
         if($nb ==0){
-            return  ;   }
+            return -1  ;   }
         $fighterToAttack = $test ->first();
         $finalHealth = $fighterToAttack['current_health'] - $fighter['skill_strength'];
         if(rand(1,20)>(10 + $fighterToAttack['level']-$fighter['level'] )){
@@ -199,14 +199,16 @@ public function attUp ($fighterId){
             $fighterToAttack['coordinate_x'] = -1;
             $fighterToAttack['coordinate_y'] = -1;
             $this->save($fighterToAttack);
+            return $fighterToAttack['name'].' et le tue!';
             }
             else {
                 $fighterToAttack['current_health'] = $finalHealth ;
                 $this->save($fighterToAttack);
+                 return $fighterToAttack['name'];
                 
             }   
             
-            }   }
+            } else{return$fighterToAttack['name'].' et échoue!'; ;}  }
             
    public function attDown ($fighterId){
     $query = $this->find('all', array('conditions' => array('id' => $fighterId)));
@@ -216,7 +218,7 @@ public function attUp ($fighterId){
         $test = $this->find('all',array('conditions' => array('coordinate_y' => $y,'coordinate_x' => $x)));
         $nb = $test -> count();
         if($nb ==0){
-            return ;   }
+            return -1 ;   }
         $fighterToAttack = $test ->first();
         $finalHealth = $fighterToAttack['current_health'] - $fighter['skill_strength'];
         if(rand(1,20)>(10 + $fighterToAttack['level']-$fighter['level'] )){
@@ -225,11 +227,13 @@ public function attUp ($fighterId){
             $fighterToAttack['coordinate_x'] = -1;
             $fighterToAttack['coordinate_y'] = -1;
             $this->save($fighterToAttack);
+            return $fighterToAttack['name'].' et le tue!';
             }
             else {
                 $fighterToAttack['current_health'] = $finalHealth ;
                 $this->save($fighterToAttack);
-            }     }   }
+                return $fighterToAttack['name'];
+            }     } else{return $fighterToAttack['name'].' et échoue!';}  }
             
     public function attLeft ($fighterId){
     $query = $this->find('all', array('conditions' => array('id' => $fighterId)));
@@ -239,7 +243,7 @@ public function attUp ($fighterId){
         $test = $this->find('all',array('conditions' => array('coordinate_y' => $y,'coordinate_x' => $x)));
         $nb = $test -> count();
         if($nb ==0){
-            return ;   }
+            return -1 ;   }
         $fighterToAttack = $test ->first();
         $finalHealth = $fighterToAttack['current_health'] - $fighter['skill_strength'];
         if(rand(1,20)>(10 + $fighterToAttack['level']-$fighter['level'] )){
@@ -248,11 +252,13 @@ public function attUp ($fighterId){
             $fighterToAttack['coordinate_x'] = -1;
             $fighterToAttack['coordinate_y'] = -1;
             $this->save($fighterToAttack);
+            return $fighterToAttack['name'].' et le tue!';
             }
             else {
                 $fighterToAttack['current_health'] = $finalHealth ;
                 $this->save($fighterToAttack);
-            }     }   }
+                return $fighterToAttack['name'];
+            }     } else{return $fighterToAttack['name'].' et échoue!';}  }
             
  public function attRight ($fighterId){
     $query = $this->find('all', array('conditions' => array('id' => $fighterId)));
@@ -262,7 +268,7 @@ public function attUp ($fighterId){
         $test = $this->find('all',array('conditions' => array('coordinate_y' => $y,'coordinate_x' => $x)));
         $nb = $test -> count();
         if($nb ==0){
-            return ;   }
+            return -1 ;   }
         $fighterToAttack = $test ->first();
         $finalHealth = $fighterToAttack['current_health'] - $fighter['skill_strength'];
         if(rand(1,20)>(10 + $fighterToAttack['level']-$fighter['level'] )){
@@ -271,11 +277,13 @@ public function attUp ($fighterId){
             $fighterToAttack['coordinate_x'] = -1;
             $fighterToAttack['coordinate_y'] = -1;
             $this->save($fighterToAttack);
+            return $fighterToAttack['name'].' et le tue!';
             }
             else {
                 $fighterToAttack['current_health'] = $finalHealth ;
                 $this->save($fighterToAttack);
-            }     }   }
+                return $fighterToAttack['name'];
+            }     }else{return $fighterToAttack['name'].' et échoue!';}   }
                 
    
     

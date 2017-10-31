@@ -15,11 +15,14 @@ class EventsTable extends Table
         $this->save($new);
     } 
     
-    public function att($fighter,$fighterAtt,$event){
+    public function att($fighterName,$string,$x,$y){
+        if($string == -1){
+            return ;
+        }
         $new = $this->newEntity();
-        $new['name'] = $fighter['name'] . ' attaque ' . $fighterAtt['name'].$event;
-        $new['coordinate_x'] = $fighterAtt['coordinate_x'];
-        $new['coordinate_y'] = $fighterAtt['coordinate_y'];
+        $new['name'] = $fighterName . ' attaque ' . $string;
+        $new['coordinate_x'] = $x;
+        $new['coordinate_y'] = $y;
         $new['date'] = time();
         $this->save($new);
     }
