@@ -101,6 +101,7 @@ class ArenasController extends AppController {
         }
         $this->loadModel('Fighters');
         $this->loadModel('Events');
+        $this->loadModel('Tools');
         $fighterID = $this->request->session()->read('selectedFighterId');
         $playerID = $this->request->session()->read('playerId');
         $fighterName =$this->Fighters->getFighterName($fighterID) ;
@@ -171,6 +172,10 @@ class ArenasController extends AppController {
             $x = $x+1;
             $this->Events->att($fighterName,$chaine,$x,$y);
             $this->redirect(['action' => 'sight']);
+        }
+        
+         else if($this->request->is('post') && $this->request->data['add']=='createTools' ){
+            $this->Tools->createTools();
         }
         $map = array();
         for ($i=0; $i<10; $i++){

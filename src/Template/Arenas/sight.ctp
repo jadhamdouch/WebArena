@@ -141,7 +141,11 @@ echo '<tr class="active">';
      
       </div>
       
-      
+      <?php echo $this->Form->create('tools');
+    echo $this->Form->hidden('add', ['value' =>'createTools']);
+    echo $this->Form->submit('Creer tools',['class'=> 'btn btn-success']);
+    echo $this->Form->end();
+    ?>
 
 
 </div>
