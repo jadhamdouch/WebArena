@@ -65,6 +65,7 @@ public function getBestFighter(){
         $query = $this->find('all', array('conditions' => array('id' => $fighterId)));
         $fighter = $query->first();
         $fighter['level'] = $fighter['level'] + 1; 
+        $fighter['skill_health'] = $fighter['skill_health']+1;
         $health = $fighter['skill_health'];
         $fighter['current_health'] = $health;
         $this->save($fighter); 
@@ -109,7 +110,7 @@ public function getBestFighter(){
         $fighter = $query->first();
         $levelF = $fighter['level'];
         $xpF = $fighter['xp'];
-        $health = $fighter['skill_health'] +1;
+        $health = $fighter['skill_health'] +3;
         if($xpF/4 - $levelF >=0){
             $fighter['skill_health']= $health ;
             $this->save($fighter); 
