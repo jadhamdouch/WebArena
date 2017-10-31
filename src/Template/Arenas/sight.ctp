@@ -1,3 +1,4 @@
+<body>
 <?php
 
 $this->assign('title', 'Sight');?>
@@ -115,6 +116,27 @@ echo '<tr class="active">';
           </table>
           
           
+          
+          <table >
+              <tr><td></td><td>
+                  <?php echo $this->Form->create('flecheH');
+    echo $this->Form->hidden('add', ['value' =>'attH']);
+    echo $this->Form->submit('Attaquer en haut',['class'=> 'btn btn-success']);
+    echo $this->Form->end();?>
+                  </td><td></td></tr>
+              
+              <tr><td><?php echo $this->Form->create('flecheH');
+    echo $this->Form->hidden('add', ['value' =>'attG']);
+    echo $this->Form->submit('Attaquer à gauche',['class'=> 'btn btn-success']);
+    echo $this->Form->end();?></td><td></td><td><?php echo $this->Form->create('flecheH');
+    echo $this->Form->hidden('add', ['value' =>'attD']);
+    echo $this->Form->submit('Attaquer à droite',['class'=> 'btn btn-success']);
+    echo $this->Form->end();?></td></tr>
+              <tr><td></td><td><?php echo $this->Form->create('flecheB');
+    echo $this->Form->hidden('add', ['value' =>'attB']);
+    echo $this->Form->submit('Attaquer en bas',['class'=> 'btn btn-success']);
+    echo $this->Form->end();?></td><td></td></tr> 
+          </table>
      
       </div>
       
@@ -124,3 +146,4 @@ echo '<tr class="active">';
 </div>
 <br>
 <br>
+</body>

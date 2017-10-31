@@ -137,7 +137,7 @@ public function moveUp ($fighterId){
         $x =$fighter['coordinate_x'];
         $test = $this->find('all',array('conditions' => array('coordinate_y' => $y,'coordinate_x' => $x)));
         $nb = $test -> count();
-        if($nb == 0){
+        if($nb == 0 && $y>=1 ){
             $fighter['coordinate_y'] = $y;
             $this->save($fighter); 
         }
@@ -150,7 +150,7 @@ public function moveDown ($fighterId){
         $x =$fighter['coordinate_x'];
         $test = $this->find('all',array('conditions' => array('coordinate_y' => $y,'coordinate_x' => $x)));
         $nb = $test -> count();
-        if($nb == 0){
+        if($nb == 0&& $y<=10){
             $fighter['coordinate_y'] = $y;
             $this->save($fighter); 
         }
@@ -163,7 +163,7 @@ public function moveRight ($fighterId){
         $x =$fighter['coordinate_x']+1;
         $test = $this->find('all',array('conditions' => array('coordinate_y' => $y,'coordinate_x' => $x)));
         $nb = $test -> count();
-        if($nb == 0){
+        if($nb == 0 && $x<=15){
             $fighter['coordinate_x'] = $x;
             $this->save($fighter); 
         }
@@ -176,11 +176,106 @@ public function moveLeft ($fighterId){
         $x =$fighter['coordinate_x']-1;
         $test = $this->find('all',array('conditions' => array('coordinate_y' => $y,'coordinate_x' => $x)));
         $nb = $test -> count();
-        if($nb == 0){
+        if($nb == 0 && $x>=1){
             $fighter['coordinate_x'] = $x;
             $this->save($fighter); 
         }
 }
+
+public function attUp ($fighterId){
+    $query = $this->find('all', array('conditions' => array('id' => $fighterId)));
+        $fighter = $query->first();
+        $y =$fighter['coordinate_y']-1;
+        $x =$fighter['coordinate_x'];
+        $test = $this->find('all',array('conditions' => array('coordinate_y' => $y,'coordinate_x' => $x)));
+        $nb = $test -> count();
+        if($nb ==0){
+            return  ;   }
+        $fighterToAttack = $test ->first();
+        $finalHealth = $fighterToAttack['current_health'] - $fighter['skill_strength'];
+        if(rand(1,20)>(10 + $fighterToAttack['level']-$fighter['level'] )){
+            if($finalHealth <= 0){
+            $fighterToAttack['current_health'] = 0 ;
+            $fighterToAttack['coordinate_x'] = -1;
+            $fighterToAttack['coordinate_y'] = -1;
+            $this->save($fighterToAttack);
+            }
+            else {
+                $fighterToAttack['current_health'] = $finalHealth ;
+                $this->save($fighterToAttack);
+                
+            }   
+            
+            }   }
+            
+   public function attDown ($fighterId){
+    $query = $this->find('all', array('conditions' => array('id' => $fighterId)));
+        $fighter = $query->first();
+        $y =$fighter['coordinate_y']+1;
+        $x =$fighter['coordinate_x'];
+        $test = $this->find('all',array('conditions' => array('coordinate_y' => $y,'coordinate_x' => $x)));
+        $nb = $test -> count();
+        if($nb ==0){
+            return ;   }
+        $fighterToAttack = $test ->first();
+        $finalHealth = $fighterToAttack['current_health'] - $fighter['skill_strength'];
+        if(rand(1,20)>(10 + $fighterToAttack['level']-$fighter['level'] )){
+            if($finalHealth <= 0){
+            $fighterToAttack['current_health'] = 0 ;
+            $fighterToAttack['coordinate_x'] = -1;
+            $fighterToAttack['coordinate_y'] = -1;
+            $this->save($fighterToAttack);
+            }
+            else {
+                $fighterToAttack['current_health'] = $finalHealth ;
+                $this->save($fighterToAttack);
+            }     }   }
+            
+    public function attLeft ($fighterId){
+    $query = $this->find('all', array('conditions' => array('id' => $fighterId)));
+        $fighter = $query->first();
+        $y =$fighter['coordinate_y'];
+        $x =$fighter['coordinate_x']-1;
+        $test = $this->find('all',array('conditions' => array('coordinate_y' => $y,'coordinate_x' => $x)));
+        $nb = $test -> count();
+        if($nb ==0){
+            return ;   }
+        $fighterToAttack = $test ->first();
+        $finalHealth = $fighterToAttack['current_health'] - $fighter['skill_strength'];
+        if(rand(1,20)>(10 + $fighterToAttack['level']-$fighter['level'] )){
+            if($finalHealth <= 0){
+            $fighterToAttack['current_health'] = 0 ;
+            $fighterToAttack['coordinate_x'] = -1;
+            $fighterToAttack['coordinate_y'] = -1;
+            $this->save($fighterToAttack);
+            }
+            else {
+                $fighterToAttack['current_health'] = $finalHealth ;
+                $this->save($fighterToAttack);
+            }     }   }
+            
+ public function attRight ($fighterId){
+    $query = $this->find('all', array('conditions' => array('id' => $fighterId)));
+        $fighter = $query->first();
+        $y =$fighter['coordinate_y'];
+        $x =$fighter['coordinate_x']+1;
+        $test = $this->find('all',array('conditions' => array('coordinate_y' => $y,'coordinate_x' => $x)));
+        $nb = $test -> count();
+        if($nb ==0){
+            return ;   }
+        $fighterToAttack = $test ->first();
+        $finalHealth = $fighterToAttack['current_health'] - $fighter['skill_strength'];
+        if(rand(1,20)>(10 + $fighterToAttack['level']-$fighter['level'] )){
+            if($finalHealth <= 0){
+            $fighterToAttack['current_health'] = 0 ;
+            $fighterToAttack['coordinate_x'] = -1;
+            $fighterToAttack['coordinate_y'] = -1;
+            $this->save($fighterToAttack);
+            }
+            else {
+                $fighterToAttack['current_health'] = $finalHealth ;
+                $this->save($fighterToAttack);
+            }     }   }
                 
    
     

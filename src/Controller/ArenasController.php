@@ -141,6 +141,26 @@ class ArenasController extends AppController {
             $this->Fighters->moveLeft($fighterID);
             $this->redirect(['action' => 'sight']);
         }
+        else if($this->request->is('post') && $this->request->data['add']=='attH' ){
+            $this->Fighters->attUp($fighterID);
+            $this->redirect(['action' => 'sight']);
+            
+        }
+        
+        else if($this->request->is('post') && $this->request->data['add']=='attB' ){
+            $this->Fighters->attDown($fighterID);
+            $this->redirect(['action' => 'sight']);
+        }
+        
+        else if($this->request->is('post') && $this->request->data['add']=='attG' ){
+            $this->Fighters->attLeft($fighterID);
+            $this->redirect(['action' => 'sight']);
+        }
+        
+        else if($this->request->is('post') && $this->request->data['add']=='attD' ){
+            $this->Fighters->attRight($fighterID);
+            $this->redirect(['action' => 'sight']);
+        }
         $map = array();
         for ($i=0; $i<10; $i++){
             $map[$i] = array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);

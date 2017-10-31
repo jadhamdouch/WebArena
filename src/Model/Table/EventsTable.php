@@ -15,6 +15,15 @@ class EventsTable extends Table
         $this->save($new);
     } 
     
+    public function att($fighter,$fighterAtt,$event){
+        $new = $this->newEntity();
+        $new['name'] = $fighter['name'] . ' attaque ' . $fighterAtt['name'].$event;
+        $new['coordinate_x'] = $fighterAtt['coordinate_x'];
+        $new['coordinate_y'] = $fighterAtt['coordinate_y'];
+        $new['date'] = time();
+        $this->save($new);
+    }
+    
     public function getEvents(){
         $now = Time::now();
         $all = $this->find('all', array('conditions' => array('date >' => $now->modify('-24 hours'))));
