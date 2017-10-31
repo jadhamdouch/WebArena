@@ -1,24 +1,8 @@
-table,th {
-    text-align:center;
-}
-.av{width:100px;
-height:100px;}
-.menuCol{background-color:#996633;}
-.imgDam{width:45px;
-height:45px;}
+table,th { text-align:center;}
+.av{width:100px; height:100px;}
+.imgDam{width:45px; height:45px;}
 body{background-image:url(../img/Theme/BP1.jpg);background-position:center center;background-size: 100% ; background-repeat : no-repeat ; background-attachment:fixed;}
-.arena{border:5px solid #6699ff;
-border-collapse : collapse;
-}
-html, body {
-	height: 100%;
-	margin: 0; padding: 0;
-}
-body {
-	display : table;
-	width: 100%;
-}
-footer {
-	display : table-row;
-	height: 50px; /* à titre d'exemple */
-}
+.arena{border:5px solid #6699ff; border-collapse : collapse;}
+html, body {height: 100%;margin: 0; padding: 0;}
+body {display : table;width: 100%;}
+footer {display : table-row;height: 50px;}

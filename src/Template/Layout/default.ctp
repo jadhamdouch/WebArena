@@ -34,7 +34,7 @@
     </div>
     <div class="collapse navbar-collapse "  data-spy="affix" data-offset-top="1">
       <ul class="nav navbar-nav ">
-        <li><?php echo $this->Html->link('Index', array('controller' => 'Arenas', 'action' => '/')); ?></li>
+        <li><?php echo $this->Html->link('Index', array('class'=>"color-me",'controller' => 'Arenas', 'action' => '/')); ?></li>
                 <li><?php echo $this->Html->link('Vision', array('controller' => 'Arenas', 'action' => 'sight')); ?></li>
                 <li><?php echo $this->Html->link('Combattant', array('controller' => 'Arenas', 'action' => 'fighter')); ?></li>
                 <li><?php echo $this->Html->link('Diary', array('controller' => 'Arenas', 'action' => 'diary')); ?></li>
