@@ -43,6 +43,21 @@ class ArenasController extends AppController {
         $this->request->session()->delete('playerId');
         $this->redirect(['action' => '/']);
     }
+    
+    public function Equipement() {
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }
 
     public function fighter() {
         /* $this->loadModel('Fighters');

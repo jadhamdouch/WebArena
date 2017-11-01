@@ -38,6 +38,7 @@
                 <li><?php echo $this->Html->link('Vision', array('controller' => 'Arenas', 'action' => 'sight')); ?></li>
                 <li><?php echo $this->Html->link('Combattant', array('controller' => 'Arenas', 'action' => 'fighter')); ?></li>
                 <li><?php echo $this->Html->link('Journal', array('controller' => 'Arenas', 'action' => 'diary')); ?></li>
+                <li><?php echo $this->Html->link('Equipement', array('controller' => 'Arenas', 'action' => 'Equipement')); ?></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li> <?php echo $this->Html->link($this->Html->tag('span',' Login',array('class'=>'glyphicon glyphicon-log-in')), array('controller' => 'Arenas', 'action' => 'login'),array('escape'=>false)); ?></li>
