@@ -33,20 +33,14 @@ $this->assign('title', 'Index');?>
             <h3 class="text-center">Règle du jeu</h3><br>
 
             <div class='row'>
-                <p>Un combattant se trouve dans une arène en damier à une position X,Y. Cette position ne peut pas se trouver hors des dimension de l'arène. Un seul combattant par case. Une arène par site.</p>
-                <p>Un combattant commence avec les caractéristiques suivantes : vue= 2, force=1, point de vie=5 (ces valeurs doivent être paramétrées). Il apparaît à une position libre aléatoire.</p>
-                <p>Constantes paramétrées et valeurs de livraison : largeur (x) de l'arène (15), longueur (y) de l'arène (10) (ces valeurs doivent être paramétrées dans un modèle).</p>
-                <p>La caractéristique de vue détermine à quelle distance (de Manhattan = x+y) un combattant peut voir. Ainsi seuls les combattants et les éléments du décor à portée sont affichés sur la page concernée. 0 correspond à la case courante.</p>
-
-                <p>La caractéristique de force détermine combien de point de vie perd son adversaire quand le combattant réussit son action d'attaque..</p>
-                <p> Lorsque le combattant voit ses points de vie atteindre 0, il est retiré du jeu. Un joueur dont le combattant a été retiré du jeu est invité à en recréer un nouveau.</p>
-                <p> Une action d'attaque réussit si une valeur aléatoire entre 1 et 20 (d20) est supérieur à un seuil calculé comme suit : 10 + niveau de l'attaqué - niveau de l'attaquant.</p>
-                <p>  Progression : à chaque attaque réussie le combattant gagne 1 point d'expérience. Si l'attaque tue l'adversaire, le combattant gagne en plus autant de points d'expériences que le niveau de l'adversaire vaincu. Tous les 4 points d'expériences, le combattant change de niveau et peut choisir d'augmenter une de ses caractéristiques : vue +1 ou force+1 ou point de vie+3. En cas de progression, les points de vie maximaux augmentent ET les points de vie courants remontent au maximum.</p>
-                <p>   En pratique, on incrémentera le niveau que lorsqu'une augmentation sera prise, et on utilisera (xp/4) - niveau pour savoir s'il reste des augmentations à prendre. Le niveau commence et les points d'expérience commencent à 0.</p>
-                <p>   Chaque action provoque la création d'un événement avec une description claire. Par exemple : « jonh attaque bill et le touche ».</p>
+                <p>Bonjour à toi jeune aventurier ! Tu t'apprêtes à entrer dans l'univers de WebArena et nous tenions à te souhaiter la bienvenue. </p>
+                <p>Cependant, avant d'aller plus loin je dois te prévenir que ce jeu est réserver aux guerriers les plus téméraires. Ne perdons pas plus de temps, il est l'heure de discuter avec toi des <b>Règles du jeu</b>.</p>
+                <p>Tout d'abord, il va te falloir choisir <b>une classe</b> d'affiliation. Il existe dans WebArena 3 types de héro : Les Archers, les Mages et les Combattants. Ces 3 classes sont présentés <a href="#Héro">ici</a>.</p>
+                <p>Une fois ton héro crée et ta classe choisis tu apparaitras sur un champs de bataille (mette screen).</p>
+                <p>Sur ce champs de bataille tu pourras y trouver des adversaires, qui te permettront de gagner en <b>points d'expériences </b> (appelés <b>Points d'xp</b> dans le jargon de WebArena). </p>
             </div>
 
-            <h3 class="text-center">Voici les personnages que vous pouvez incarner</h3><br>
+            <h3 id="Héro" class="text-center">Voici les personnages que vous pouvez incarner</h3><br>
             <div class='row'>
                 <div id="Archer" class="col-sm-6" >
                     <h4>Archer</h4>
