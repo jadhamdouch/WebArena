@@ -201,7 +201,8 @@ class ArenasController extends AppController {
         
         
        $this->set('sessionFighter', $this->Fighters->getFighter($this->request->session()->read('selectedFighterId')));
-       $this->set('arenaMap', $this->Fighters->displayFighters($map));
+        $mapWithTools = $this->Tools->displayTools($map);
+       $this->set('arenaMap', $this->Fighters->displayFighters($mapWithTools));
         
         
     }

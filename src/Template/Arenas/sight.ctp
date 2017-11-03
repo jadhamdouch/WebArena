@@ -75,7 +75,7 @@ echo '<tr class="active">';
                             echo $this->Html->image("avatars/".$square['player_id'].$square['name'],array("class"=>"imgDam",'title' => $square['name']));
                         }else{
                             if(isset($square['bonus'])){
-                                echo $this->Html->image($square['type'] . $square['bonus'] . '.jpg', ['alt' => 'weapon' . $square['bonus']]);
+                                echo $this->Html->image("Item/".$square['type'].$square['bonus']. '.jpg', array("class"=>"imgDam",'title' => $square['name']));
                             }
                         }
                     }

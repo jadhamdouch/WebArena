@@ -14,7 +14,7 @@ class ToolsTable extends Table
             $nb =1 ;
             $tool = $this->newEntity();
             $tool -> type = $tools[rand(0,2)];
-            $tool -> bonus = rand(1,2);
+            $tool -> bonus = rand(1,2,3);
             while($nb != 0){
                $y = rand(1,10);
                $x= rand(1,15);
@@ -29,11 +29,11 @@ class ToolsTable extends Table
             }
     }
     
-    public function displayFighters($map){
+    public function displayTools($map){
         $temp = $this->find('all');
         foreach($temp as $tool){
             if($tool['coordinate_x'] != -1 && $tool['coordinate_y'] != -1){
-                $map[$tool['coordinate_y']-1][$tool['coordinate_x']-1] = $tool;
+                $map[$tool['coordinate_x']][$tool['coordinate_y']] = $tool;
             }
         }
         return $map;
