@@ -78,10 +78,17 @@ class ArenasController extends AppController {
         }
         else if ($this->request->is('post')&& $this->request->data['create']=='no'){
             foreach ( $fighters as $f) {
-                if($f->id ==$this->request->data['fighterId'] ){
+                if($f->id ==$this->request->data['fighterId']  ){
+                    if($f->current_health > 0){
                     $this->request->session()->write('selectedFighterId', $f->id);
-                    $this->redirect(['action' => 'sight']);
+                    $this->redirect(['action' => 'sight']);}
+                    else{
+                       $this->Flash->error("ce combatant est mort",array("class"=>"bg-danger"));
+                        
+                    }
+                        
                 }
+                
                 
             }
         }
