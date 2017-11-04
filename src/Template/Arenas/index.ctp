@@ -36,8 +36,18 @@ $this->assign('title', 'Index');?>
                 <p>Bonjour à toi jeune aventurier ! Tu t'apprêtes à entrer dans l'univers de WebArena et nous tenions à te souhaiter la bienvenue. </p>
                 <p>Cependant, avant d'aller plus loin je dois te prévenir que ce jeu est réserver aux guerriers les plus téméraires. Ne perdons pas plus de temps, il est l'heure de discuter avec toi des <b>Règles du jeu</b>.</p>
                 <p>Tout d'abord, il va te falloir choisir <b>une classe</b> d'affiliation. Il existe dans WebArena 3 types de héro : Les Archers, les Mages et les Combattants. Ces 3 classes sont présentés <a href="#Héro">ici</a>.</p>
-                <p>Une fois ton héro crée et ta classe choisis tu apparaitras sur un champs de bataille (mette screen).</p>
-                <p>Sur ce champs de bataille tu pourras y trouver des adversaires, qui te permettront de gagner en <b>points d'expériences </b> (appelés <b>Points d'xp</b> dans le jargon de WebArena). </p>
+                <p>Une fois ton héro crée et ta classe choisie, tu apparaitras sur un champs de bataille (mette screen).</p>
+                <p>Sur ce champs de bataille tu pourras y trouver des adversaires, qui te permettront de gagner en <b>points d'expériences </b> (appelés <b>Points d'xp</b> dans le jargon de WebArena). 
+                    Tu pourras également trouver des items qui te permettront d'augmenter les différentes caractéristique de ton héro. 
+                    Il est possible d'augmenter :
+                    <ul>
+                        <li>Sa <b>Vue</b>, cette  caractéristique te permettra de voir les ennemies mais également les objets au loin.</li>
+                        <li>Sa <b>Force</b> pour transformer ton héro en véritable guerrier et lui permettre d'avoir de plus gros dégâts.</li>
+                        <li>Sa <b>Vie</b> afin d'augmenter les point de vie de ton héro et lui permettre de tenir plus longtemps en combat.</li>
+                    </ul>
+                </p>
+                <p>Ça y est tu en sais suffisamment pour te lancer à l'aventure de WebArena. N'hésites pas à consulter la page équipement pour voir les différents objets présents sur le champs de bataille. </p>
+                <p>Arme toi de tout ton courage et bon voyage au sein de WebArena jeune héro !</p>
             </div>
 
             <h3 id="Héro" class="text-center">Voici les personnages que vous pouvez incarner</h3><br>
