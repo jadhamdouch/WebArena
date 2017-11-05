@@ -54,7 +54,7 @@ $this->assign('title', 'Index');?>
             <div class='row'>
                 <div id="Archer" class="col-sm-6" >
                     <h4>Archer</h4>
-                    <img src="webroot/img/Personnages/Archer/cratte.png" class="img-responsive" style="width:100%" alt="Image Archer">
+                    <img src="webroot/img/archer.jpg" class="img-responsive" style="width:100%" alt="Image Archer">
                 </div>
 
                 <div class="col-sm-6" >
@@ -71,13 +71,13 @@ $this->assign('title', 'Index');?>
                 </div>
                 <div id="Mage" class="col-sm-6"> 
                     <h4>Mage</h4> 
-                    <img src="webroot/img/Personnages/Mage/MageFTemporaire.png" class="img-responsive" style="width:100%" alt="Image Mage"> 
+                    <img src="webroot/img/mage.jpg" class="img-responsive" style="width:100%" alt="Image Mage"> 
                 </div>
             </div>
             <div class='row'>
                 <div id="Combattant" class="col-sm-6"> 
                     <h4>Combattant</h4> 
-                    <img src="webroot/img/Personnages/Combattant/iop.png" class="img-responsive" style="width:100%" alt="Image Combattant">
+                    <img src="webroot/img/combattant.jpg" class="img-responsive" style="width:100%" alt="Image Combattant">
                 </div>
 
                 <div class="col-sm-6" >

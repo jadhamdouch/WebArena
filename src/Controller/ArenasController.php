@@ -116,7 +116,7 @@ class ArenasController extends AppController {
             }
             else{
                 
-              $srcfile = 'img'.DS.$this->request->data['field'].'.png';  
+              $srcfile = 'img'.DS.$this->request->data['field'].'.jpg';  
               $dstfile = 'img'. DS . 'avatars'.DS.$playerID .$this->request->data['name'].'.jpg';
                 copy($srcfile, $dstfile);
             }
