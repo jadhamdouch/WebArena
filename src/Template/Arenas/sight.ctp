@@ -72,10 +72,10 @@ echo '<tr class="active">';
                 $dist = abs($j - $sessionFighter['coordinate_x']+1) + abs($i - $sessionFighter['coordinate_y']+1);
                 if($dist < 0){ $dist = 0 - $dist; }
                 if($dist > $sessionFighter['skill_sight']){
-                    echo $this->Html->image('treeF.png',array("class"=>"imgDam"));
+                    echo $this->Html->image('arbustre.jpg',array("class"=>"imgDam"));
                 }else{
                     if(gettype($square) == 'integer'){
-                    echo $this->Html->image('grass.jpg',array("class"=>"imgDam"));
+                    echo $this->Html->image('gazon.jpg',array("class"=>"imgDam"));
                     }else{
                         if(isset($square['player_id'])){
                             

@@ -1,6 +1,5 @@
 <?php
-
-$this->assign('title', 'Index');?>
+$this->assign('title', 'WebArena');?>
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
     <!-- Wrapper for slides -->
