@@ -8,7 +8,9 @@
     <title>
         <?= $this->fetch('title') ?>
     </title>
-    <?= $this->Html->meta('icon') ?>
+   <?php echo $this->Html->meta ( 'favicon.ico', '/img/icon.ico', array (
+    'type' => 'icon' 
+) );?>
 
 
     <?= $this->Html->css('bootstrap.css') ?>
