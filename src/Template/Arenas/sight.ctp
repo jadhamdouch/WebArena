@@ -21,7 +21,7 @@ echo '<tr class="active">';
     echo '<td>';
     echo $fighter["xp"];
     echo '</td>';
-    echo '</tr><tr class="info"><td>Vu</td>';
+    echo '</tr><tr class="info"><td>Vue</td>';
     echo '<td>';
     echo $this->Form->create('fighter');
     echo $this->Form->hidden('add', ['value' =>'sight']);
