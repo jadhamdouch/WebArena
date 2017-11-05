@@ -58,7 +58,9 @@ public function getBestFighter(){
       $fighter->current_health = 5;
        if($this->save($fighter)){
             $id = $fighter -> id ;
+            
         }
+        return array('x' => $fighter['coordinate_x'], 'y' => $fighter['coordinate_y']);
                     }
                     
     public function passerNiveau($fighterId){

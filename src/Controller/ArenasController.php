@@ -100,9 +100,11 @@ class ArenasController extends AppController {
         }
         $playerID = $this->request->session()->read('playerId');
         $this->loadModel('Fighters');
+        $this->loadModel('Events');
         if (!empty($this->request->data['name'])) {
             $fighterName = $this->request->data['name'];
-            $this->Fighters->createFighter($playerID, $fighterName);
+            $coordinate =$this->Fighters->createFighter($playerID, $fighterName);
+            $this->Events->createFighter($fighterName,$coordinate);
             $filename = strtolower(
                                     pathinfo(
                                             $this->request->data['avatar_file']['name'],
@@ -126,6 +128,8 @@ class ArenasController extends AppController {
         $this->loadModel('Tools');
         $fighterID = $this->request->session()->read('selectedFighterId');
         $playerID = $this->request->session()->read('playerId');
+        $this->loadModel('Events');
+        $this->set('events', $this->Events->getEvents());
         $fighterName =$this->Fighters->getFighterName($fighterID) ;
         $x = $this->Fighters->getFighterX($fighterID) ;
         $y = $this->Fighters->getFighterY($fighterID);

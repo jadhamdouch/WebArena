@@ -27,6 +27,15 @@ class EventsTable extends Table
         $this->save($new);
     }
     
+    public function createFighter($fighterName,$coordinate){
+        $new = $this->newEntity();
+        $new['name'] = $fighterName . ' a rejoint l\'arène ';
+        $new['coordinate_x'] = $coordinate['x'];
+        $new['coordinate_y'] = $coordinate['y'];;
+        $new['date'] = time();
+        $this->save($new);
+    }
+    
     public function getEvents(){
         $now = Time::now();
         $all = $this->find('all', array('conditions' => array('date >' => $now->modify('-24 hours'))));

@@ -1,12 +1,8 @@
 <body>
-<?php
-
-$this->assign('title', 'Sight');?>
-<div class="container-fluid ">    
+<div class="container-fluid">
   <div class="row content">
-      <div class="col-sm-3 sidenav">
-           
-          <table class="table">
+    <div class="col-sm-3 sidenav">
+      <table class="table">
               <tr class="default"><th></th><th><?php echo $this->Html->image("avatars/".$avatar,array('class'=>'av'));?></th></tr>
     
 <?php    
@@ -63,11 +59,11 @@ echo '<tr class="active">';
     echo $this->Form->submit('Equiper',['class'=> 'btn btn-success']);
     echo $this->Form->end();
     ?>
-      </div>
-      <div class ="container">
-     
- <div class="col-sm-8 ">
-<table class="arena">
+      
+    </div>
+
+    <div class="col-sm-9">
+      <table class="arena">
    <?php foreach($arenaMap as $i => $line){
         echo '<tr>';
         if(isset($line[1])){
@@ -98,10 +94,7 @@ echo '<tr class="active">';
         echo '</tr>';
     }?>
 </table>
-     
-     </div>
-      <div class="center-block">
-      
+
 <table>
     <tr>
         <td></td><td> <?php echo $this->Form->create('flecheH');
@@ -143,11 +136,17 @@ echo '<tr class="active">';
     echo $this->Form->end();?>  </td><td></td>
     </tr>
 </table>
-
-      </div>
-
+         <table id="events" class="table table-striped">
+        <thead><tr><th>Evenement</th></tr></thead>
+        <tbody><?php
+            foreach ($events as $e){
+                echo $this->Html->tableCells([
+                    [ $e['name']]
+                ]);
+            }?>
+        </tbody>
+    </table> 
 </div>
-<br>
-<br>
+
 </body>
 
