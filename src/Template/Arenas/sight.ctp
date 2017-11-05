@@ -79,10 +79,10 @@ echo '<tr class="active">';
                     }else{
                         if(isset($square['player_id'])){
                             
-                            echo $this->Html->image("avatars/".$square['player_id'].$square['name'],array("class"=>"imgDam",'title' => $square['name']));
+                            echo $this->Html->image("avatars/".$square['player_id'].$square['name'],array("class"=>"imgDam img-circle",'title' => $square['name']));
                         }else{
                             if(isset($square['bonus'])){
-                                echo $this->Html->image("Item/".$square['type'].$square['bonus']. '.jpg', array("class"=>"imgDam",'title' => $square['name']));
+                                echo $this->Html->image("Item/".$square['type'].$square['bonus']. '.jpg', array("class"=>"imgDam ",'title' => $square['name']));
                             }
                         }
                     }
