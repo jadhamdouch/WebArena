@@ -1,21 +1,38 @@
-        <?php
 
 
-echo $this->Form->create('Fighter', array('type'=>'file'));
 
-// Va générer un input type="text"
-echo $this->Form->input('name',['type' => 'text']);
-echo $this->Form->file('avatar_file',array('label'=>'Votre avatar au format'));?>
-<h3> Pas d'inspiration pour votre avatar? choisissez une de nos classes pour vous voir attribué son avatar ;) </h3>
+
+
+<?php
+
+$this->assign('title', 'Creer son combattant');?>
+<div class="row">
+<div class="col-xs-6">
+<legend><?php echo ('Remplissez les champs du formulaire pour creer votre combattant'); ?></legend>
+</div>
+</div>
+<?php echo $this->Form->create('Fighter', array('type'=>'file'));?>
+<div class="row">
+<div class="col-xs-3">
+<?php
+echo $this->Form->input('name',['type' => 'text','label' => 'Nom','class'=>'form-control']);
+echo $this->Form->label('Upload votre avatar au format jpg');
+echo $this->Form->file('avatar_file',array('class'=>' btn btn-primary'));?><br>
+    </div>
+</div>
+    <div class="row">
+<div class="col-xs-6">
+<legend><?php echo ('Pas d\'inspiration pour votre avatar? choisissez une de nos classes pour vous voir attribué son avatar ;)'); ?></legend>
+</div></div>
+<div class="row">
+<div class="col-xs-3">
 <?php echo $this->Form->select('field', [
     'archer' => 'Archer',
     'mage' => 'Mage',
     'combattant' => 'Combattant'
 ]);
-
-//echo $this->Form->postButton('Supprimer', ['controller' => 'Tickets', 'action' => 'delete', 5]) ;
-
-
-
-echo $this->Form->button('Creer');
+echo '<br><br><br><br><br>' ;
+echo $this->Form->button('Creer',['class'=> 'btn btn-primary']);
 echo $this->Form->end();?>
+
+</div></div>
