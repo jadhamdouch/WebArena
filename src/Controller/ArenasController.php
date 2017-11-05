@@ -198,6 +198,13 @@ class ArenasController extends AppController {
         
          else if($this->request->is('post') && $this->request->data['add']=='createTools' ){
             $this->Tools->createTools();
+            $this->redirect(['action' => 'sight']);
+        }
+        
+        else if($this->request->is('post') && $this->request->data['add']=='equiper'){
+            $bonusDif = $this->Tools->equiper($x,$y,$fighterID);
+            $this->Fighters->bonusItem($fighterID, $bonusDif);
+            $this->redirect(['action' => 'sight']);
         }
         $map = array();
         for ($i=0; $i<10; $i++){

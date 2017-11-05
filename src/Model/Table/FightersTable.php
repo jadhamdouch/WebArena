@@ -301,6 +301,26 @@ public function attUp ($fighterId){
                 $this->save($fighter);
                 return $fighterToAttack['name'];
             }     }else{return $fighterToAttack['name'].' et échoue!';}   }
+            
+            
+            public function bonusItem($fighter, $bonusDif){
+        $conditions = array('id' => $fighter);
+        if($this->exists($conditions)){
+            $temp = $this->find('all', array('conditions' => $conditions));
+            $f = $temp->first();
+            switch($bonusDif['type']){
+                case 'D': $f['skill_strength'] = $f['skill_strength'] + $bonusDif['dif'];
+                    break;
+                case 'L': $f['skill_health'] = $f['skill_health'] + $bonusDif['dif'];
+                    $f['current_health'] = $f['current_health'] + $bonusDif['dif'];
+                    break;
+                case 'V': $f['skill_sight'] = $f['skill_sight'] + $bonusDif['dif'];
+                    break;
+                default : break;
+            }
+            $this->save($f);
+        }
+    }
                 
    
     
