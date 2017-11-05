@@ -114,6 +114,12 @@ class ArenasController extends AppController {
                 move_uploaded_file($this->request->data['avatar_file']['tmp_name'], 'img' . DS. 'avatars' . DS . $playerID .$this->request->data['name']. '.' . $filename );
                 
             }
+            else{
+                
+              $srcfile = 'img'.DS.$this->request->data['field'].'.png';  
+              $dstfile = 'img'. DS . 'avatars'.DS.$playerID .$this->request->data['name'].'.jpg';
+                copy($srcfile, $dstfile);
+            }
             $this->redirect(['action' => 'fighter']);
             
         }
